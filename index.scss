@@ -1,0 +1,122 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	.background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		transition: opacity 0.5s ease-in-out;
+	}
+	.transparent {
+		opacity: 0;
+	}
+	#home-background {
+		background: no-repeat fixed radial-gradient(
+			circle,
+		#fdd791 20%,
+		#d39b01 80%
+		);
+	}
+
+	#about-background {
+		background: no-repeat fixed radial-gradient(
+			circle,
+		#91fdd7 20%,
+		#01d39b 80%
+		);
+	}
+	#contact-background {
+		background: no-repeat fixed radial-gradient(
+			circle,
+		#d791fd 20%,
+		#9b01d3 80%
+		);
+	}
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+		nav {
+			list-style: none;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background: none;
+			color: white;
+			font-family: 'Source Code Pro', mono space;
+			font-size: 2rem;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			a {
+				text-decoration: none;
+				color: inherit;
+				transform: translateY(-100%);
+				position: relative;
+				text-align: center;
+				padding-top: 1%;
+				padding-bottom: 0.05%;
+				&::before {
+					content: '';
+					color:white;
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					border-bottom: 3px solid white;
+					transform: scaleX(0);
+				}
+				&:hover::before {
+					transform: scaleX(1);
+					transition: transform 0.2s;
+				}
+			}
+			.animation {
+				transition: transform 0.5s;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	#home {
+		height: "100%";
+		color: white;
+		padding: 5%;
+		h1 {
+			font-family: 'Poppins', sans-serif;
+			font-size: 10rem;
+			margin: 1%;
+		}
+		.name {
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		.name.name-animation {
+			opacity: 100;
+		}
+	}
+
+	#about {
+		font-size: 96px;
+		padding: 5%;
+	}
+
+	#contact {
+		font-size: 96px;
+		padding: 5%;
+		color: white;
+	}
+} 
