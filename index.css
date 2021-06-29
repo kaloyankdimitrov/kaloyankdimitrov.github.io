@@ -22,15 +22,15 @@ body .transparent {
 }
 
 body #home-background {
-  background: no-repeat fixed radial-gradient(circle, #fdd791 20%, #d39b01 80%);
+  background: no-repeat fixed radial-gradient(circle, #e7bb69 20%, #d39b01 80%);
 }
 
 body #about-background {
-  background: no-repeat fixed radial-gradient(circle, #91fdd7 20%, #01d39b 80%);
+  background: no-repeat fixed radial-gradient(circle, #74d8d0 20%, #01c1d3 80%);
 }
 
 body #contact-background {
-  background: no-repeat fixed radial-gradient(circle, #d791fd 20%, #9b01d3 80%);
+  background: no-repeat fixed radial-gradient(circle, #ad4aff 20%, #6d00a0 80%);
 }
 
 body header {
@@ -132,6 +132,7 @@ body #home .name.name-animation {
 body #about {
   font-size: 96px;
   padding: 5%;
+  color: white;
 }
 
 body #contact {
