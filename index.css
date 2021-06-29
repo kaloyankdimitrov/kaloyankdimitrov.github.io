@@ -38,6 +38,9 @@ body header {
   top: 0;
   left: 0;
   right: 0;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -63,6 +66,7 @@ body header nav {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 1%;
 }
 
 body header nav a {
@@ -72,7 +76,6 @@ body header nav a {
           transform: translateY(-100%);
   position: relative;
   text-align: center;
-  padding-top: 1%;
   padding-bottom: 0.05%;
 }
 
@@ -105,6 +108,10 @@ body header nav .animation {
   transition: transform 0.5s, -webkit-transform 0.5s;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+body header:hover {
+  background-color: rgba(50, 50, 50, 0.7);
 }
 
 body #home {
