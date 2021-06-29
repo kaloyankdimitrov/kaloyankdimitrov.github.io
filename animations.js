@@ -15,10 +15,14 @@ const observer = new IntersectionObserver((entries) => {
 		// set background
 		document.getElementById("home-background").classList.remove("transparent");
 		// trigger fade in animation
-		sections["home"].target.children["first-name"].classList.add("name-animation");
+		sections["home"].target.children["first-name"].classList.add("opacity-animation");
 		// delay fade in animation
-		setTimeout(() => sections["home"].target.children["last-name"].classList.add("name-animation"), 500);
-			
+		setTimeout(() => sections["home"].target.children["last-name"].classList.add("opacity-animation"), 500);
+		setTimeout(() => { 
+			Array.from(document.getElementsByClassName("qualifications")).forEach((wrapper) => {
+				Array.from(wrapper.getElementsByTagName("h3")).forEach((element, ind) => setTimeout(() => element.classList.add("opacity-animation"), ind * 100))
+			});
+		}, 1000);
 	}
 	// transition to about section
 	if (sections["home"].intersectionRatio < 0.23) {

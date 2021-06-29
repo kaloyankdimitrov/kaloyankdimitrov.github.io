@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -126,13 +127,37 @@ body #home h1 {
   margin: 1%;
 }
 
+body #home .qualifications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body #home h3 {
+  font-size: 3rem;
+  margin: 1%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+body #home h3:before {
+  content: '⬪';
+}
+
 body #home .name {
   opacity: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
 
-body #home .name.name-animation {
+body #home .opacity-animation {
   opacity: 100;
 }
 
