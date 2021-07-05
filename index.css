@@ -1,41 +1,36 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
 }
 
-body {
+html .home-background {
+  background-color: #d39b01;
+}
+
+html .about-background {
+  background-color: #01c1d3;
+}
+
+html .contact-background {
+  background-color: #441fec;
+}
+
+html body {
   margin: 0;
+  padding: 0 5% 0 5%;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
 
-body .background {
+html body header {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
-}
-
-body .transparent {
-  opacity: 0;
-}
-
-body #home-background {
-  background: no-repeat fixed radial-gradient(circle, #e7bb69 20%, #d39b01 80%);
-}
-
-body #about-background {
-  background: no-repeat fixed radial-gradient(circle, #74d8d0 20%, #01c1d3 80%);
-}
-
-body #contact-background {
-  background: no-repeat fixed radial-gradient(circle, #ad4aff 20%, #6d00a0 80%);
-}
-
-body header {
-  position: fixed;
+  z-index: 10000;
   top: 0;
   left: 0;
   right: 0;
@@ -48,11 +43,10 @@ body header {
   background-size: cover;
 }
 
-body header nav {
+html body header nav {
   list-style: none;
   list-style-type: none;
   margin: 0;
-  padding: 0;
   overflow: hidden;
   background: none;
   color: white;
@@ -70,7 +64,7 @@ body header nav {
   padding: 1%;
 }
 
-body header nav a {
+html body header nav a {
   text-decoration: none;
   color: inherit;
   -webkit-transform: translateY(-100%);
@@ -80,7 +74,7 @@ body header nav a {
   padding-bottom: 0.05%;
 }
 
-body header nav a::before {
+html body header nav a::before {
   content: '';
   color: white;
   position: absolute;
@@ -93,7 +87,7 @@ body header nav a::before {
           transform: scaleX(0);
 }
 
-body header nav a:hover::before {
+html body header nav a:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transition: -webkit-transform 0.2s;
@@ -102,7 +96,7 @@ body header nav a:hover::before {
   transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
-body header nav .animation {
+html body header nav .animation {
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -111,23 +105,37 @@ body header nav .animation {
           transform: translateY(0);
 }
 
-body header:hover {
-  background-color: rgba(50, 50, 50, 0.7);
+html body header:hover {
+  background-color: rgba(50, 50, 50, 0.5);
 }
 
-body #home {
-  height: "100%";
+html body section {
+  height: 100%;
+  width: 100%;
+  margin-top: 5%;
+}
+
+html body #home {
   color: white;
-  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-body #home h1 {
+html body #home h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 10rem;
   margin: 1%;
 }
 
-body #home .qualifications {
+html body #home .qualifications {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,7 +147,8 @@ body #home .qualifications {
       flex-wrap: wrap;
 }
 
-body #home h3 {
+html body #home h3 {
+  font-family: 'Hack';
   font-size: 3rem;
   margin: 1%;
   opacity: 0;
@@ -147,29 +156,71 @@ body #home h3 {
   transition: opacity 0.5s;
 }
 
-body #home h3:before {
+html body #home h3::before {
   content: '⬪';
 }
 
-body #home .name {
+html body #home .name {
   opacity: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
 
-body #home .opacity-animation {
+html body #home .opacity-animation {
   opacity: 100;
 }
 
-body #about {
+html body #about {
   font-size: 96px;
-  padding: 5%;
+  margin-top: 5%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body #about h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10rem;
+  margin: 5%;
+}
+
+html body #about h3 {
+  font-family: 'Hack';
+  font-size: 3rem;
+  margin: 2%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+html body #about h3::before {
+  content: '˃ ';
+  font-weight: bold;
+}
+
+html body #about .opacity-animation {
+  opacity: 100;
+}
+
+html body #contact {
+  font-size: 96px;
+  margin-top: 5%;
   color: white;
 }
 
-body #contact {
-  font-size: 96px;
-  padding: 5%;
-  color: white;
+html body #contact h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10rem;
+  margin: 5%;
 }
 /*# sourceMappingURL=index.css.map */

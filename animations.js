@@ -3,39 +3,44 @@ Array.from(document.getElementById("header").children).forEach((elem, ind) => {
 	setTimeout(() => elem.classList.add("animation"), ind * 250);
 });
 // map of sections for IntersectionObserver
-let sections = {};
-let observerOptions = {threshold: [0, 0.2, 0.8, 1]};
+let isIntersecting = {};
 // on scroll animation
 const observer = new IntersectionObserver((entries) => {
+	const body = document.getElementsByTagName("body")[0];
 	entries.forEach((entry) => {
-		sections[entry.target.id] = entry;
+		isIntersecting[entry.target.id] = entry.isIntersecting;
 	});
-	// transition to home
-	if (sections["home"].isIntersecting && sections["about"].intersectionRatio < 0.23) {
+	// if home
+	if (isIntersecting["home"]) {
 		// set background
-		document.getElementById("home-background").classList.remove("transparent");
+		body.className = "home-background";
 		// trigger fade in animation
-		sections["home"].target.children["first-name"].classList.add("opacity-animation");
+		document.getElementById("home").children["first-name"].classList.add("opacity-animation");
 		// delay fade in animation
-		setTimeout(() => sections["home"].target.children["last-name"].classList.add("opacity-animation"), 500);
+		setTimeout(() => document.getElementById("home").children["last-name"].classList.add("opacity-animation"), 500);
 		setTimeout(() => { 
 			Array.from(document.getElementsByClassName("qualifications")).forEach((wrapper) => {
 				Array.from(wrapper.getElementsByTagName("h3")).forEach((element, ind) => setTimeout(() => element.classList.add("opacity-animation"), ind * 100))
 			});
 		}, 1000);
-	}
-	// transition to about section
-	if (sections["home"].intersectionRatio < 0.23) {
-		document.getElementById("home-background").classList.add("transparent");
-	}
-	// transition to contact
-	if (sections["contact"].isIntersecting && sections["about"].intersectionRatio < 0.23) {
-		document.getElementById("about-background").classList.add("transparent");
 	} else {
-		document.getElementById("about-background").classList.remove("transparent");
+		// reset all animations
+		document.getElementById("home").children["first-name"].classList.remove("opacity-animation");
+		document.getElementById("home").children["last-name"].classList.remove("opacity-animation");
+		Array.from(document.getElementsByClassName("qualifications")).forEach((wrapper) => {
+			Array.from(wrapper.getElementsByTagName("h3")).forEach((element) => element.classList.remove("opacity-animation"))
+		});
+	}
+	// if about
+	if (!isIntersecting["home"] && isIntersecting["about"]) {
+		body.className = "about-background";
+	}
+	// if contact
+	if (!isIntersecting["about"] && isIntersecting["contact"]) {
+		body.className = "contact-background";
 	}
 
-}, observerOptions);
+});
 observer.observe(document.getElementById("home"));
 observer.observe(document.getElementById("about"));
 observer.observe(document.getElementById("contact"));
