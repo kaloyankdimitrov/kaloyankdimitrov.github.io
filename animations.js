@@ -59,6 +59,10 @@ const observer = new IntersectionObserver((entries) => {
   // if about
   if (!isIntersecting["home"] && isIntersecting["about"]) {
     body.className = "about-background";
+    // fade in title
+    document
+      .getElementById("about-section-title")
+      .classList.add("opacity-animation");
     // bio animation
     Array.from(document.getElementsByClassName("bio-list")).forEach((list) =>
       Array.from(list.getElementsByTagName("h3")).forEach((element, ind) =>
@@ -68,6 +72,9 @@ const observer = new IntersectionObserver((entries) => {
   }
   if (!isIntersecting["about"]) {
     // reset all about animations
+    document
+      .getElementById("about-section-title")
+      .classList.remove("opacity-animation");
     Array.from(document.getElementsByClassName("bio-list")).forEach((list) =>
       Array.from(list.getElementsByTagName("h3")).forEach((element) =>
         element.classList.remove("list-animation")
