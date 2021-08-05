@@ -174,7 +174,6 @@ html body #home .opacity-animation {
 
 html body #about {
   font-size: 96px;
-  margin-top: 5%;
   color: white;
 }
 
@@ -183,9 +182,6 @@ html body #about h1 {
   font-family: "Poppins", sans-serif;
   font-size: 10rem;
   margin: 5%;
-  opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
 }
 
 html body #about h3 {
@@ -241,7 +237,6 @@ html body #about .list-animation::before {
 
 html body #contact {
   font-size: 96px;
-  margin-top: 5%;
   color: white;
 }
 
@@ -250,5 +245,19 @@ html body #contact h1 {
   font-family: "Poppins", sans-serif;
   font-size: 10rem;
   margin: 5%;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+html body #contact h2 {
+  font-family: "Hack";
+  font-size: 5rem;
+  margin: 10%;
+  text-align: center;
+}
+
+html body #contact .opacity-animation {
+  opacity: 100;
 }
 /*# sourceMappingURL=index.css.map */

@@ -84,6 +84,14 @@ const observer = new IntersectionObserver((entries) => {
   // if contact
   if (!isIntersecting["about"] && isIntersecting["contact"]) {
     body.className = "contact-background";
+    document
+      .getElementById("contact-section-title")
+      .classList.add("opacity-animation");
+  }
+  if (!isIntersecting["contact"]) {
+    document
+      .getElementById("contact-section-title")
+      .classList.remove("opacity-animation");
   }
 });
 observer.observe(document.getElementById("home"));
