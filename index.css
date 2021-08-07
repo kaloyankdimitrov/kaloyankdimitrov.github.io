@@ -13,6 +13,7 @@ html body {
           box-sizing: border-box;
   -webkit-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
+  color: white;
 }
 
 html body header {
@@ -54,6 +55,7 @@ html body header nav {
 }
 
 html body header nav a {
+  cursor: pointer;
   text-decoration: none;
   color: inherit;
   -webkit-transform: translateY(-100%);
@@ -112,17 +114,6 @@ html body section {
 
 html body #home {
   background-color: #d39b01;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 html body #home h1 {
@@ -168,7 +159,6 @@ html body #home .opacity-animation {
 
 html body #about {
   font-size: 96px;
-  color: white;
   background-color: #01c1d3;
 }
 
@@ -177,6 +167,9 @@ html body #about h1 {
   font-family: "Poppins", sans-serif;
   font-size: 10rem;
   margin: 5%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 html body #about h3 {
@@ -232,7 +225,6 @@ html body #about .list-animation::before {
 
 html body #contact {
   font-size: 96px;
-  color: white;
   background-color: #441fec;
 }
 
@@ -242,8 +234,8 @@ html body #contact h1 {
   font-size: 10rem;
   margin: 5%;
   opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 html body #contact h2 {

@@ -1,4 +1,10 @@
-let current = -1;
+// header animation
+Array.from(document.getElementById("header").children).forEach((elem, ind) => {
+  setTimeout(() => elem.classList.add("animation"), ind * 250);
+});
+
+let current = 0,
+  prev = -1;
 let timeouts = [];
 let setTimeoutWithCancel = (handler, timeout) => {
   timeouts.push(setTimeout(handler, timeout));
@@ -61,14 +67,21 @@ let sections = [
       document
         .getElementById("about-section-title")
         .classList.add("opacity-animation");
+      console.log(document.getElementById("about-section-title").classList);
       // bio animation
-      Array.from(document.getElementsByClassName("bio-list")).forEach((list) =>
-        Array.from(list.getElementsByTagName("h3")).forEach((element, ind) =>
-          setTimeoutWithCancel(
-            () => element.classList.add("list-animation"),
-            ind * 500
-          )
-        )
+      setTimeoutWithCancel(
+        () =>
+          Array.from(document.getElementsByClassName("bio-list")).forEach(
+            (list) =>
+              Array.from(list.getElementsByTagName("h3")).forEach(
+                (element, ind) =>
+                  setTimeoutWithCancel(
+                    () => element.classList.add("list-animation"),
+                    ind * 500
+                  )
+              )
+          ),
+        500
       );
     },
     clearAnimation: () => {
@@ -93,7 +106,7 @@ let sections = [
         .getElementById("contact-email")
         .classList.add("opacity-animation");
     },
-    clearAnyoimation: () => {
+    clearAnimation: () => {
       document
         .getElementById("contact-section-title")
         .classList.remove("opacity-animation");
@@ -105,27 +118,29 @@ let sections = [
 ];
 
 let update = () => {
-  if (current !== -1) {
+  if (prev !== -1) {
     // remove all pending animations
     cancelTimeouts();
     // clean up previous section
-    document.getElementById(sections[current].id).style.opacity = 0;
-    sections[current].clearAnimation();
+    document.getElementById(sections[prev].id).style.opacity = 0;
+    sections[prev].clearAnimation();
   }
-  let url = window.location.hash.substring(1);
-
-  // get current section from url or set it to home
-  current = sections.findIndex((sec) => sec.id === url);
-  if (current === -1) {
-    current = 0;
-  }
+  // show new section and trigger its animations
   document.getElementById(sections[current].id).style.opacity = 100;
   setTimeoutWithCancel(sections[current].animation, 500);
+  prev = current;
 };
-update();
-window.onhashchange = update;
 
-// header animation
-Array.from(document.getElementById("header").children).forEach((elem, ind) => {
-  setTimeout(() => elem.classList.add("animation"), ind * 250);
+// activate nav links
+Array.from(document.getElementById("header").children).forEach((link) => {
+  link.addEventListener("click", () => {
+    current = sections.findIndex(
+      (section) => section.id === link.attributes.section.nodeValue
+    );
+    if (current !== prev) {
+      update();
+    }
+  });
 });
+
+update();
