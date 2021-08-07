@@ -27,7 +27,7 @@ let sections = [
           document
             .getElementById("home")
             .children["last-name"].classList.add("opacity-animation"),
-        500
+        300
       );
       setTimeoutWithCancel(() => {
         Array.from(document.getElementsByClassName("qualifications")).forEach(
@@ -41,7 +41,7 @@ let sections = [
             );
           }
         );
-      }, 1000);
+      }, 600);
     },
     clearAnimation: () => {
       // reset all home animations
@@ -77,11 +77,11 @@ let sections = [
                 (element, ind) =>
                   setTimeoutWithCancel(
                     () => element.classList.add("list-animation"),
-                    ind * 500
+                    ind * 400
                   )
               )
           ),
-        500
+        300
       );
     },
     clearAnimation: () => {
@@ -102,9 +102,12 @@ let sections = [
       document
         .getElementById("contact-section-title")
         .classList.add("opacity-animation");
-      document
-        .getElementById("contact-email")
-        .classList.add("opacity-animation");
+      setTimeoutWithCancel(
+        document
+          .getElementById("contact-email")
+          .classList.add("opacity-animation"),
+        300
+      );
     },
     clearAnimation: () => {
       document

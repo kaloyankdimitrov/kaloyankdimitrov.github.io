@@ -107,7 +107,7 @@ html {
       }
       .name {
         opacity: 0;
-        transition: opacity 1s;
+        transition: opacity 0.3s;
       }
       .opacity-animation {
         opacity: 100;
@@ -123,7 +123,7 @@ html {
         font-size: 10rem;
         margin: 5%;
         opacity: 0;
-        transition: opacity 0.5s;
+        transition: opacity 0.3s;
       }
       h3 {
         font-family: "Hack";
@@ -166,7 +166,7 @@ html {
         font-size: 10rem;
         margin: 5%;
         opacity: 0;
-        transition: opacity 0.5s;
+        transition: opacity 0.3s;
       }
       h2 {
         font-family: "Hack";
