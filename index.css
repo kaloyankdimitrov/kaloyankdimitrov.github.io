@@ -149,8 +149,8 @@ html body #home h3::before {
 
 html body #home .name {
   opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 html body #home .opacity-animation {
