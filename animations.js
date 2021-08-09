@@ -128,6 +128,8 @@ let update = () => {
     document.getElementById(sections[prev].id).style.opacity = 0;
     sections[prev].clearAnimation();
   }
+  // change body background
+  document.body.className = sections[current].id + "-background";
   // show new section and trigger its animations
   document.getElementById(sections[current].id).style.opacity = 100;
   setTimeoutWithCancel(sections[current].animation, 500);

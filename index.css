@@ -1,8 +1,20 @@
 @charset "UTF-8";
 html {
-  scroll-behavior: smooth;
+  overflow: hidden;
   height: 100%;
   width: 100%;
+}
+
+html .home-background {
+  background-color: #d39b01;
+}
+
+html .about-background {
+  background-color: #01c1d3;
+}
+
+html .contact-background {
+  background-color: #441fec;
 }
 
 html body {
@@ -14,14 +26,19 @@ html body {
   -webkit-transition: background-color 0.5s ease-in-out;
   transition: background-color 0.5s ease-in-out;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 html body header {
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  left: 0;
-  right: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
   background-color: rgba(0, 0, 0, 0);
@@ -31,7 +48,6 @@ html body header {
   background-size: cover;
   margin: 0;
   padding: 1%;
-  height: 5%;
 }
 
 html body header nav {
@@ -100,7 +116,18 @@ html body header:hover {
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-html body section {
+html body main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+html body main section {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -109,20 +136,16 @@ html body section {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 7% 5% 0 5%;
+  padding: 0 5% 0 5%;
 }
 
-html body #home {
-  background-color: #d39b01;
-}
-
-html body #home h1 {
+html body main #home h1 {
   font-family: "Poppins", sans-serif;
   font-size: 10rem;
   margin: 1%;
 }
 
-html body #home .qualifications {
+html body main #home .qualifications {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,7 +157,7 @@ html body #home .qualifications {
       flex-wrap: wrap;
 }
 
-html body #home h3 {
+html body main #home h3 {
   font-family: "Hack";
   font-size: 3rem;
   margin: 1%;
@@ -143,26 +166,25 @@ html body #home h3 {
   transition: opacity 0.5s;
 }
 
-html body #home h3::before {
+html body main #home h3::before {
   content: "⬪";
 }
 
-html body #home .name {
+html body main #home .name {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
-html body #home .opacity-animation {
+html body main #home .opacity-animation {
   opacity: 100;
 }
 
-html body #about {
+html body main #about {
   font-size: 96px;
-  background-color: #01c1d3;
 }
 
-html body #about h1 {
+html body main #about h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 10rem;
@@ -172,7 +194,7 @@ html body #about h1 {
   transition: opacity 0.3s;
 }
 
-html body #about h3 {
+html body main #about h3 {
   font-family: "Hack";
   font-size: 3rem;
   margin: 2%;
@@ -181,7 +203,7 @@ html body #about h3 {
   transition: opacity 0.5s;
 }
 
-html body #about h3::before {
+html body main #about h3::before {
   display: inline-block;
   margin: 2%;
   content: "˃ ";
@@ -194,7 +216,7 @@ html body #about h3::before {
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
-html body #about .list {
+html body main #about .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,25 +232,24 @@ html body #about .list {
           justify-content: center;
 }
 
-html body #about .opacity-animation {
+html body main #about .opacity-animation {
   opacity: 100;
 }
 
-html body #about .list-animation {
+html body main #about .list-animation {
   opacity: 100;
 }
 
-html body #about .list-animation::before {
+html body main #about .list-animation::before {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
 
-html body #contact {
+html body main #contact {
   font-size: 96px;
-  background-color: #441fec;
 }
 
-html body #contact h1 {
+html body main #contact h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 10rem;
@@ -238,7 +259,7 @@ html body #contact h1 {
   transition: opacity 0.3s;
 }
 
-html body #contact h2 {
+html body main #contact h2 {
   font-family: "Hack";
   font-size: 5rem;
   margin: 10%;
@@ -248,7 +269,7 @@ html body #contact h2 {
   transition: opacity 1s;
 }
 
-html body #contact .opacity-animation {
+html body main #contact .opacity-animation {
   opacity: 100;
 }
 /*# sourceMappingURL=index.css.map */
