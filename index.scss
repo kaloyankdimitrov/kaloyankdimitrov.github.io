@@ -137,25 +137,35 @@ html {
           transition: opacity 0.3s;
         }
         h3 {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
           font-family: "Hack";
-          font-size: 3rem;
+          font-size: 2rem;
           margin: 2%;
           opacity: 0;
           transition: opacity 0.5s;
           &::before {
-            display: inline-block;
             margin: 2%;
-            content: "˃ ";
+            content: ">";
+            font-size: inherit;
             font-weight: bold;
             transform: rotate(90deg);
             transition: transform 0.5s;
           }
         }
-        .list {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
+        #bio-list {
+          display: grid;
+          grid-template-columns: auto auto;
+          grid-template-rows: auto auto auto;
+          justify-items: stretch;
+          align-items: stretch;
+          .first-column {
+            grid-column: 1 / 1;
+          }
+          .second-column {
+            grid-column: 2 / 2;
+          }
         }
         .opacity-animation {
           opacity: 100;

@@ -67,18 +67,14 @@ let sections = [
       document
         .getElementById("about-section-title")
         .classList.add("opacity-animation");
-      console.log(document.getElementById("about-section-title").classList);
       // bio animation
       setTimeoutWithCancel(
         () =>
-          Array.from(document.getElementsByClassName("bio-list")).forEach(
-            (list) =>
-              Array.from(list.getElementsByTagName("h3")).forEach(
-                (element, ind) =>
-                  setTimeoutWithCancel(
-                    () => element.classList.add("list-animation"),
-                    ind * 400
-                  )
+          Array.from(document.getElementById("bio-list").children).forEach(
+            (element, ind) =>
+              setTimeoutWithCancel(
+                () => element.classList.add("list-animation"),
+                ind * 200
               )
           ),
         300
@@ -89,10 +85,8 @@ let sections = [
       document
         .getElementById("about-section-title")
         .classList.remove("opacity-animation");
-      Array.from(document.getElementsByClassName("bio-list")).forEach((list) =>
-        Array.from(list.getElementsByTagName("h3")).forEach((element) =>
-          element.classList.remove("list-animation")
-        )
+      Array.from(document.getElementById("bio-list").children).forEach(
+        (element) => element.classList.remove("list-animation")
       );
     },
   },
