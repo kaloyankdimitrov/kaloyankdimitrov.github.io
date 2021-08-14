@@ -142,8 +142,8 @@ html body main section {
 html body main #home h1 {
   font-family: "Poppins", sans-serif;
   margin: 1%;
-  font-size: 8vw;
-  font-size: 8vmax;
+  font-size: 9vw;
+  font-size: 9vmax;
 }
 
 html body main #home .qualifications {
@@ -183,10 +183,6 @@ html body main #home .opacity-animation {
   opacity: 100;
 }
 
-html body main #about {
-  font-size: 96px;
-}
-
 html body main #about h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -210,7 +206,8 @@ html body main #about h3 {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Hack";
-  font-size: 2rem;
+  font-size: 2.5vw;
+  font-size: 2.5vmax;
   margin: 2%;
   opacity: 0;
   -webkit-transition: opacity 0.5s;
@@ -266,14 +263,11 @@ html body main #about .list-animation::before {
           transform: rotate(0deg);
 }
 
-html body main #contact {
-  font-size: 96px;
-}
-
 html body main #contact h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 10rem;
+  font-size: 9vw;
+  font-size: 9vmax;
   margin: 5%;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
@@ -282,7 +276,8 @@ html body main #contact h1 {
 
 html body main #contact h2 {
   font-family: "Hack";
-  font-size: 5rem;
+  font-size: 2.5vw;
+  font-size: 2.5vmax;
   margin: 10%;
   text-align: center;
   opacity: 0;
