@@ -39,8 +39,8 @@ html {
         background: none;
         color: white;
         font-family: "Source Code Pro", mono space;
-        font-size: 2.5vw;
-        font-size: 2.5vmax;
+        font-size: 4vh;
+        font-size: 4vmin;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -100,8 +100,8 @@ html {
         h1 {
           font-family: "Poppins", sans-serif;
           margin: 1%;
-          font-size: 9vw;
-          font-size: 9vmax;
+          font-size: 15vh;
+          font-size: 15vmin;
         }
         .qualifications {
           margin-top: 1%;
@@ -112,8 +112,8 @@ html {
         h3 {
           font-family: "Hack";
           margin: 1%;
-          font-size: 3vw;
-          font-size: 3vmax;
+          font-size: 4vh;
+          font-size: 4vmin;
           opacity: 0;
           transition: opacity 0.5s;
           &::before {
@@ -133,8 +133,8 @@ html {
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
-          font-size: 10vw;
-          font-size: 10vmax;
+          font-size: 15vh;
+          font-size: 15vmin;
           margin: 5%;
           opacity: 0;
           transition: opacity 0.3s;
@@ -144,8 +144,8 @@ html {
           flex-direction: row;
           align-items: center;
           font-family: "Hack";
-          font-size: 2.5vw;
-          font-size: 2.5vmax;
+          font-size: 4vh;
+          font-size: 4vmin;
           margin: 2%;
           opacity: 0;
           transition: opacity 0.5s;
@@ -186,16 +186,16 @@ html {
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
-          font-size: 9vw;
-          font-size: 9vmax;
+          font-size: 15vh;
+          font-size: 15vmin;
           margin: 5%;
           opacity: 0;
           transition: opacity 0.3s;
         }
         h2 {
           font-family: "Hack";
-          font-size: 2.5vw;
-          font-size: 2.5vmax;
+          font-size: 4vh;
+          font-size: 4vmin;
           margin: 10%;
           text-align: center;
           opacity: 0;

@@ -57,8 +57,8 @@ html body header nav {
   background: none;
   color: white;
   font-family: "Source Code Pro", mono space;
-  font-size: 2.5vw;
-  font-size: 2.5vmax;
+  font-size: 4vh;
+  font-size: 4vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,8 +142,8 @@ html body main section {
 html body main #home h1 {
   font-family: "Poppins", sans-serif;
   margin: 1%;
-  font-size: 9vw;
-  font-size: 9vmax;
+  font-size: 15vh;
+  font-size: 15vmin;
 }
 
 html body main #home .qualifications {
@@ -162,8 +162,8 @@ html body main #home .qualifications {
 html body main #home h3 {
   font-family: "Hack";
   margin: 1%;
-  font-size: 3vw;
-  font-size: 3vmax;
+  font-size: 4vh;
+  font-size: 4vmin;
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -186,8 +186,8 @@ html body main #home .opacity-animation {
 html body main #about h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 10vw;
-  font-size: 10vmax;
+  font-size: 15vh;
+  font-size: 15vmin;
   margin: 5%;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
@@ -206,8 +206,8 @@ html body main #about h3 {
       -ms-flex-align: center;
           align-items: center;
   font-family: "Hack";
-  font-size: 2.5vw;
-  font-size: 2.5vmax;
+  font-size: 4vh;
+  font-size: 4vmin;
   margin: 2%;
   opacity: 0;
   -webkit-transition: opacity 0.5s;
@@ -266,8 +266,8 @@ html body main #about .list-animation::before {
 html body main #contact h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 9vw;
-  font-size: 9vmax;
+  font-size: 15vh;
+  font-size: 15vmin;
   margin: 5%;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
@@ -276,8 +276,8 @@ html body main #contact h1 {
 
 html body main #contact h2 {
   font-family: "Hack";
-  font-size: 2.5vw;
-  font-size: 2.5vmax;
+  font-size: 4vh;
+  font-size: 4vmin;
   margin: 10%;
   text-align: center;
   opacity: 0;
