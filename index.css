@@ -3,42 +3,27 @@ html {
   height: 100%;
   width: 100%;
 }
-
 html .home-background {
   background-color: #d39b01;
 }
-
 html .about-background {
   background-color: #01c1d3;
 }
-
 html .contact-background {
   background-color: #441fec;
 }
-
 html body {
   margin: 0;
   width: 100%;
   height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: background-color 0.5s ease-in-out;
+  box-sizing: border-box;
   transition: background-color 0.5s ease-in-out;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 html body header {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  -webkit-transition: background-color 0.5s;
+  flex: 0 0 auto;
   transition: background-color 0.5s;
   background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
@@ -48,7 +33,6 @@ html body header {
   margin: 0;
   padding: 1%;
 }
-
 html body header nav {
   list-style: none;
   list-style-type: none;
@@ -59,28 +43,19 @@ html body header nav {
   font-family: "Source Code Pro", mono space;
   font-size: 4vh;
   font-size: 4vmin;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
 }
-
 html body header nav a {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  transform: translateY(-100%);
   position: relative;
   text-align: center;
   padding-bottom: 0.05%;
 }
-
 html body header nav a::before {
   content: "";
   color: white;
@@ -90,46 +65,29 @@ html body header nav a::before {
   bottom: 0;
   right: 0;
   border-bottom: 3px solid white;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
 }
-
 html body header nav a:hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
+  transform: scaleX(1);
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
-
 html body header nav .animation {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
-
 html body header:hover {
   background-color: rgba(50, 50, 50, 0.5);
 }
-
 html body main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
   position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
-
 html body main section {
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   position: absolute;
   top: 0;
@@ -138,51 +96,36 @@ html body main section {
   bottom: 0;
   padding: 0 5% 0 5%;
 }
-
 html body main #home h1 {
   font-family: "Poppins", sans-serif;
   margin: 1%;
   font-size: 15vh;
   font-size: 15vmin;
 }
-
 html body main #home .qualifications {
   margin-top: 1%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
 html body main #home h3 {
   font-family: "Hack";
   margin: 1%;
   font-size: 4vh;
   font-size: 4vmin;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-
 html body main #home h3::before {
   content: "⬪ ";
 }
-
 html body main #home .name {
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
 html body main #home .opacity-animation {
   opacity: 100;
 }
-
 html body main #about h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -190,79 +133,49 @@ html body main #about h1 {
   font-size: 15vmin;
   margin: 5%;
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
 html body main #about h3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   font-family: "Hack";
   font-size: 4vh;
   font-size: 4vmin;
   margin: 2%;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-
 html body main #about h3::before {
   margin: 2%;
   content: ">";
   font-size: inherit;
   font-weight: bold;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
+  transform: rotate(90deg);
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
 }
-
 html body main #about #bio-list {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
   justify-items: stretch;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  align-items: stretch;
 }
-
 html body main #about #bio-list .first-column {
-  -ms-grid-column: 1;
-  grid-column: 1 / 1;
+  grid-column: 1/1;
 }
-
 html body main #about #bio-list .second-column {
-  -ms-grid-column: 2;
-  grid-column: 2 / 2;
+  grid-column: 2/2;
 }
-
 html body main #about .opacity-animation {
   opacity: 100;
 }
-
 html body main #about .list-animation {
   opacity: 100;
 }
-
 html body main #about .list-animation::before {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transform: rotate(0deg);
 }
-
 html body main #contact h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -270,22 +183,22 @@ html body main #contact h1 {
   font-size: 15vmin;
   margin: 5%;
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
-html body main #contact h2 {
+html body main #contact #contacts-list h2 {
   font-family: "Hack";
   font-size: 4vh;
   font-size: 4vmin;
-  margin: 10%;
+  margin: 5%;
   text-align: center;
   opacity: 0;
-  -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
-
+html body main #contact #contacts-list .list-animation {
+  opacity: 100;
+}
 html body main #contact .opacity-animation {
   opacity: 100;
 }
+
 /*# sourceMappingURL=index.css.map */

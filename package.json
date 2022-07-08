@@ -1,0 +1,11 @@
+{
+  "name": "personal-portfolio",
+  "version": "0.0.1",
+  "description": "My personal portfolio.",
+  "repository": "git@github.com:FreakyCoder/personal-portfolio.git",
+  "author": "Kaloyan Dimitrov <kaloyankd.06@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.53.0"
+  }
+}

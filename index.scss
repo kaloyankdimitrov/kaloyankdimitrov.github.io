@@ -192,15 +192,20 @@ html {
           opacity: 0;
           transition: opacity 0.3s;
         }
-        h2 {
-          font-family: "Hack";
-          font-size: 4vh;
-          font-size: 4vmin;
-          margin: 10%;
-          text-align: center;
-          opacity: 0;
-          transition: opacity 1s;
-        }
+		#contacts-list {
+			h2 {
+			  font-family: "Hack";
+			  font-size: 4vh;
+			  font-size: 4vmin;
+			  margin: 5%;
+			  text-align: center;
+			  opacity: 0;
+			  transition: opacity 1s;
+			}
+			.list-animation {
+			  opacity: 100;
+			}
+		}
         .opacity-animation {
           opacity: 100;
         }
