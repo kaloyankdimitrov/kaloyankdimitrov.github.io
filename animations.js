@@ -124,13 +124,17 @@ let update = () => {
 		// remove all pending animations
 		cancelTimeouts();
 		// clean up previous section
-		document.getElementById(sections[prev].id).style.opacity = 0;
+		const prevElement = document.getElementById(sections[prev].id);
+		prevElement.style.opacity = 0;
+		prevElement.style.display = "none";
 		sections[prev].clearAnimation();
 	}
 	// change body background
 	document.body.className = sections[current].id + "-background";
 	// show new section and trigger its animations
-	document.getElementById(sections[current].id).style.opacity = 100;
+	const currElement = document.getElementById(sections[current].id);
+	currElement.style.opacity = 100;
+	currElement.style.display = "block";
 	setTimeoutWithCancel(sections[current].animation, 500);
 	prev = current;
 };

@@ -1,3 +1,78 @@
+// mixins and breakpoints
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1920px;
+// Small devices
+@mixin sm {
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+
+// Medium devices
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+// Extra large devices
+@mixin xl {
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+// Fonts
+// title
+$title-regular: 5rem;
+$title-sm: 7.5rem;
+$title-lg: 10rem;
+$title-xl: 15rem;
+@mixin title-font {
+	font-size: $title-regular;
+	@include sm {
+		font-size: $title-sm;
+	}
+	@include lg {
+		font-size: $title-lg;
+	}
+	@include xl {
+		font-size: $title-xl;
+	}
+}
+// body
+$fs-regular: 1.5rem;
+$fs-sm: 1.75rem;
+$fs-lg: 2rem;
+$fs-xl: 2.5rem;
+@mixin body-font {
+	font-size: $fs-regular;
+	@include sm {
+		font-size: $fs-sm;
+	}
+	@include lg {
+		font-size: $fs-lg;
+	}
+	@include xl {
+		font-size: $fs-xl;
+	}
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -39,8 +114,7 @@ html {
         background: none;
         color: white;
         font-family: "Source Code Pro", mono space;
-        font-size: 4vh;
-        font-size: 4vmin;
+		@include body-font;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -87,6 +161,7 @@ html {
       bottom: 0;
       section {
         opacity: 0;
+		display: none;
         transition: opacity 0.5s;
         position: absolute;
         top: 0;
@@ -100,8 +175,7 @@ html {
         h1 {
           font-family: "Poppins", sans-serif;
           margin: 1%;
-          font-size: 15vh;
-          font-size: 15vmin;
+		  @include title-font;
         }
         .qualifications {
           margin-top: 1%;
@@ -112,8 +186,7 @@ html {
         h3 {
           font-family: "Hack";
           margin: 1%;
-          font-size: 4vh;
-          font-size: 4vmin;
+		  @include body-font;
           opacity: 0;
           transition: opacity 0.5s;
           &::before {
@@ -133,8 +206,7 @@ html {
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
-          font-size: 15vh;
-          font-size: 15vmin;
+		  @include title-font;
           margin: 5%;
           opacity: 0;
           transition: opacity 0.3s;
@@ -144,8 +216,7 @@ html {
           flex-direction: row;
           align-items: center;
           font-family: "Hack";
-          font-size: 4vh;
-          font-size: 4vmin;
+		  @include body-font;
           margin: 2%;
           opacity: 0;
           transition: opacity 0.5s;
@@ -186,8 +257,7 @@ html {
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
-          font-size: 15vh;
-          font-size: 15vmin;
+		  @include title-font;
           margin: 5%;
           opacity: 0;
           transition: opacity 0.3s;
@@ -195,8 +265,7 @@ html {
 		#contacts-list {
 			h2 {
 			  font-family: "Hack";
-			  font-size: 4vh;
-			  font-size: 4vmin;
+			  @include body-font;
 			  margin: 5%;
 			  text-align: center;
 			  opacity: 0;
