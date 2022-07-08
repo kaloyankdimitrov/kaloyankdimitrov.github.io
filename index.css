@@ -4,7 +4,7 @@ html {
   width: 100%;
 }
 html .home-background {
-  background-color: #d39b01;
+  background-color: #d38801;
 }
 html .about-background {
   background-color: #01c1d3;
@@ -292,6 +292,11 @@ html body main #contact #contacts-list h2 {
   html body main #contact #contacts-list h2 {
     font-size: 2.5rem;
   }
+}
+html body main #contact #contacts-list h2 a {
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 html body main #contact #contacts-list .list-animation {
   opacity: 100;
