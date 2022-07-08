@@ -273,7 +273,7 @@ html body main #contact h1 {
 html body main #contact #contacts-list h2 {
   font-family: "Hack";
   font-size: 1.5rem;
-  margin: 5%;
+  margin: 3%;
   text-align: center;
   opacity: 0;
   transition: opacity 1s;
