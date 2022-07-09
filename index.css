@@ -10180,14 +10180,14 @@ html body header nav {
   background: none;
   color: white;
   font-family: "Source Code Pro", mono space;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 @media (min-width: 576px) {
   html body header nav {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10197,7 +10197,7 @@ html body header nav {
 }
 @media (min-width: 1920px) {
   html body header nav {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 html body header nav a {
@@ -10253,11 +10253,11 @@ html body main section {
 html body main #home h1 {
   font-family: "Poppins", sans-serif;
   margin: 1%;
-  font-size: 5rem;
+  font-size: 2.5rem;
 }
 @media (min-width: 576px) {
   html body main #home h1 {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10267,7 +10267,7 @@ html body main #home h1 {
 }
 @media (min-width: 1920px) {
   html body main #home h1 {
-    font-size: 15rem;
+    font-size: 20rem;
   }
 }
 html body main #home .qualifications {
@@ -10279,13 +10279,13 @@ html body main #home .qualifications {
 html body main #home h3 {
   font-family: "Hack", monospace;
   margin: 1%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   opacity: 0;
   transition: opacity 0.5s;
 }
 @media (min-width: 576px) {
   html body main #home h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10295,7 +10295,7 @@ html body main #home h3 {
 }
 @media (min-width: 1920px) {
   html body main #home h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 html body main #home .personal h3::before {
@@ -10313,14 +10313,14 @@ html body main #home .opacity-animation {
 html body main #about h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 5rem;
+  font-size: 2.5rem;
   margin: 5%;
   opacity: 0;
   transition: opacity 0.3s;
 }
 @media (min-width: 576px) {
   html body main #about h1 {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10330,7 +10330,7 @@ html body main #about h1 {
 }
 @media (min-width: 1920px) {
   html body main #about h1 {
-    font-size: 15rem;
+    font-size: 20rem;
   }
 }
 html body main #about h3 {
@@ -10338,14 +10338,14 @@ html body main #about h3 {
   flex-direction: row;
   align-items: center;
   font-family: "Hack", monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 2%;
   opacity: 0;
   transition: opacity 0.5s;
 }
 @media (min-width: 576px) {
   html body main #about h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10355,7 +10355,7 @@ html body main #about h3 {
 }
 @media (min-width: 1920px) {
   html body main #about h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 html body main #about h3::before {
@@ -10391,14 +10391,14 @@ html body main #about .list-animation::before {
 html body main #contact h1 {
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-size: 5rem;
+  font-size: 2.5rem;
   margin: 5%;
   opacity: 0;
   transition: opacity 0.3s;
 }
 @media (min-width: 576px) {
   html body main #contact h1 {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10408,12 +10408,12 @@ html body main #contact h1 {
 }
 @media (min-width: 1920px) {
   html body main #contact h1 {
-    font-size: 15rem;
+    font-size: 20rem;
   }
 }
 html body main #contact #contacts-list h2 {
   font-family: "Hack", monospace;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 3%;
   text-align: center;
   opacity: 0;
@@ -10421,7 +10421,7 @@ html body main #contact #contacts-list h2 {
 }
 @media (min-width: 576px) {
   html body main #contact #contacts-list h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 992px) {
@@ -10431,7 +10431,7 @@ html body main #contact #contacts-list h2 {
 }
 @media (min-width: 1920px) {
   html body main #contact #contacts-list h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 html body main #contact #contacts-list h2 a {

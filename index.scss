@@ -75,10 +75,10 @@ $screen-xl-min: 1920px;
 }
 // Fonts
 // title
-$title-regular: 5rem;
-$title-sm: 7rem;
+$title-regular: 2.5rem;
+$title-sm: 5rem;
 $title-lg: 10rem;
-$title-xl: 15rem;
+$title-xl: 20rem;
 @mixin title-font {
   font-size: $title-regular;
   @include sm {
@@ -92,10 +92,10 @@ $title-xl: 15rem;
   }
 }
 // body
-$fs-regular: 1.5rem;
-$fs-sm: 1.75rem;
+$fs-regular: 1rem;
+$fs-sm: 1.5rem;
 $fs-lg: 2rem;
-$fs-xl: 2.5rem;
+$fs-xl: 3rem;
 @mixin body-font {
   font-size: $fs-regular;
   @include sm {
