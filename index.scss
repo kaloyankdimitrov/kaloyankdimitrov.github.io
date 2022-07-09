@@ -1,3 +1,39 @@
+// icons
+@import "./fontawesome/scss/fontawesome.scss";
+@import "./fontawesome/scss/solid.scss";
+@import "./fontawesome/scss/brands.scss";
+// fonts
+@font-face {
+  font-family: "Hack";
+  src: url("fonts/hack-regular.woff2?sha=3114f1256") format("woff2"),
+    url("fonts/hack-regular.woff?sha=3114f1256") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hack";
+  src: url("fonts/hack-bold.woff2?sha=3114f1256") format("woff2"),
+    url("fonts/hack-bold.woff?sha=3114f1256") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hack";
+  src: url("fonts/hack-italic.woff2?sha=3114f1256") format("woff2"),
+    url("fonts/hack-italic.woff?sha=3114f1256") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Hack";
+  src: url("fonts/hack-bolditalic.woff2?sha=3114f1256") format("woff2"),
+    url("fonts/hack-bolditalic.woff?sha=3114f1256") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
 // mixins and breakpoints
 // Small tablets and large smartphones (landscape view)
 $screen-sm-min: 576px;
@@ -12,48 +48,48 @@ $screen-lg-min: 992px;
 $screen-xl-min: 1920px;
 // Small devices
 @mixin sm {
-   @media (min-width: #{$screen-sm-min}) {
-       @content;
-   }
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
 }
 
 // Medium devices
 @mixin md {
-   @media (min-width: #{$screen-md-min}) {
-       @content;
-   }
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
 }
 
 // Large devices
 @mixin lg {
-   @media (min-width: #{$screen-lg-min}) {
-       @content;
-   }
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
 }
 
 // Extra large devices
 @mixin xl {
-   @media (min-width: #{$screen-xl-min}) {
-       @content;
-   }
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
 }
 // Fonts
 // title
 $title-regular: 5rem;
-$title-sm: 7.5rem;
+$title-sm: 7rem;
 $title-lg: 10rem;
 $title-xl: 15rem;
 @mixin title-font {
-	font-size: $title-regular;
-	@include sm {
-		font-size: $title-sm;
-	}
-	@include lg {
-		font-size: $title-lg;
-	}
-	@include xl {
-		font-size: $title-xl;
-	}
+  font-size: $title-regular;
+  @include sm {
+    font-size: $title-sm;
+  }
+  @include lg {
+    font-size: $title-lg;
+  }
+  @include xl {
+    font-size: $title-xl;
+  }
 }
 // body
 $fs-regular: 1.5rem;
@@ -61,16 +97,16 @@ $fs-sm: 1.75rem;
 $fs-lg: 2rem;
 $fs-xl: 2.5rem;
 @mixin body-font {
-	font-size: $fs-regular;
-	@include sm {
-		font-size: $fs-sm;
-	}
-	@include lg {
-		font-size: $fs-lg;
-	}
-	@include xl {
-		font-size: $fs-xl;
-	}
+  font-size: $fs-regular;
+  @include sm {
+    font-size: $fs-sm;
+  }
+  @include lg {
+    font-size: $fs-lg;
+  }
+  @include xl {
+    font-size: $fs-xl;
+  }
 }
 
 html {
@@ -114,7 +150,7 @@ html {
         background: none;
         color: white;
         font-family: "Source Code Pro", mono space;
-		@include body-font;
+        @include body-font;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -161,7 +197,7 @@ html {
       bottom: 0;
       section {
         opacity: 0;
-		display: none;
+        display: none;
         transition: opacity 0.5s;
         position: absolute;
         top: 0;
@@ -175,7 +211,7 @@ html {
         h1 {
           font-family: "Poppins", sans-serif;
           margin: 1%;
-		  @include title-font;
+          @include title-font;
         }
         .qualifications {
           margin-top: 1%;
@@ -184,13 +220,17 @@ html {
           flex-wrap: wrap;
         }
         h3 {
-          font-family: "Hack";
+          font-family: "Hack", monospace;
           margin: 1%;
-		  @include body-font;
+          @include body-font;
           opacity: 0;
           transition: opacity 0.5s;
-          &::before {
-            content: "⬪ ";
+        }
+        .personal {
+          h3::before {
+            font-size: 1rem;
+            vertical-align: middle;
+            content: "\f111  ";
           }
         }
         .name {
@@ -206,7 +246,7 @@ html {
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
-		  @include title-font;
+          @include title-font;
           margin: 5%;
           opacity: 0;
           transition: opacity 0.3s;
@@ -215,8 +255,8 @@ html {
           display: flex;
           flex-direction: row;
           align-items: center;
-          font-family: "Hack";
-		  @include body-font;
+          font-family: "Hack", monospace;
+          @include body-font;
           margin: 2%;
           opacity: 0;
           transition: opacity 0.5s;
@@ -257,29 +297,48 @@ html {
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
-		  @include title-font;
+          @include title-font;
           margin: 5%;
           opacity: 0;
           transition: opacity 0.3s;
         }
-		#contacts-list {
-			h2 {
-			  font-family: "Hack";
-			  @include body-font;
-			  margin: 3%;
-			  text-align: center;
-			  opacity: 0;
-			  transition: opacity 1s;
-			  a {
-				  color: white;
-				  margin: 0;
-				  padding: 0;
-			  }
-			}
-			.list-animation {
-			  opacity: 100;
-			}
-		}
+        #contacts-list {
+          h2 {
+            font-family: "Hack", monospace;
+            @include body-font;
+            margin: 3%;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s;
+            a {
+              color: white;
+              margin: 0;
+              padding: 0;
+              transition: text-decoration-color 300ms;
+            }
+            a:hover {
+              text-decoration-color: rgba(0, 0, 0, 0);
+            }
+            .email::before {
+              font-size: 1rem;
+              vertical-align: middle;
+              content: "\f0e0  ";
+            }
+            .cv::before {
+              font-size: 1rem;
+              vertical-align: middle;
+              content: "\f111  ";
+            }
+            .phone::before {
+              font-size: 1rem;
+              vertical-align: middle;
+              content: "\f095  ";
+            }
+          }
+          .list-animation {
+            opacity: 100;
+          }
+        }
         .opacity-animation {
           opacity: 100;
         }

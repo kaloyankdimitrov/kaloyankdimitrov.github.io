@@ -152,17 +152,3 @@ Array.from(document.getElementById("header").children).forEach((link) => {
 		}
 	});
 });
-
-// setup keyboard event to switch sections
-document.addEventListener("keyup", (e) => {
-	// page or arrow up
-	if (e.key === "PageUp" || e.key === "ArrowUp") {
-		current = (sections.length + current - 1) % sections.length;
-		update();
-	}
-	// page or arrow down
-	if (e.key === "PageDown" || e.key === "ArrowDown") {
-		current = (current + 1) % sections.length;
-		update();
-	}
-});
