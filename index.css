@@ -11,6 +11,8 @@
 .fa,
 .fas,
 .fa-solid,
+html body main #contact #contacts-list h2,
+html body main #home .personal h3:before,
 .far,
 .fa-regular,
 .fal,
@@ -28,6 +30,16 @@
   font-variant: normal;
   line-height: 1;
   text-rendering: auto;
+}
+
+html body main #contact #contacts-list h2, html body main #home .personal h3:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
 }
 
 .fa-1x {
@@ -8200,10 +8212,12 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("webfonts/fa-solid-900.woff2") format("woff2"), url("webfonts/fa-solid-900.ttf") format("truetype");
+  src: url("./webfonts/fa-solid-900.woff2") format("woff2"), url("./webfonts/fa-solid-900.ttf") format("truetype");
 }
 .fas,
-.fa-solid {
+.fa-solid,
+html body main #contact #contacts-list h2,
+html body main #home .personal h3:before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
@@ -8222,7 +8236,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("webfonts/fa-brands-400.woff2") format("woff2"), url("webfonts/fa-brands-400.ttf") format("truetype");
+  src: url("./webfonts/fa-brands-400.woff2") format("woff2"), url("./webfonts/fa-brands-400.ttf") format("truetype");
 }
 .fab,
 .fa-brands {
@@ -10277,6 +10291,9 @@ html body main #home .qualifications {
   flex-wrap: wrap;
 }
 html body main #home h3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-family: "Hack", monospace;
   margin: 1%;
   font-size: 1rem;
@@ -10298,10 +10315,16 @@ html body main #home h3 {
     font-size: 3rem;
   }
 }
-html body main #home .personal h3::before {
+html body main #home h3 i {
+  margin-right: 1rem;
+}
+html body main #home .personal h3 {
+  flex-grow: 1;
+}
+html body main #home .personal h3:before {
   font-size: 1rem;
-  vertical-align: middle;
-  content: "\f111  ";
+  margin-right: 1rem;
+  content: "\f111";
 }
 html body main #home .name {
   opacity: 0;
@@ -10359,7 +10382,8 @@ html body main #about h3 {
   }
 }
 html body main #about h3::before {
-  margin: 2%;
+  font-size: 1rem;
+  margin-right: 1rem;
   content: ">";
   font-size: inherit;
   font-weight: bold;
@@ -10412,51 +10436,53 @@ html body main #contact h1 {
   }
 }
 html body main #contact #contacts-list h2 {
-  font-family: "Hack", monospace;
   font-size: 1rem;
   margin: 3%;
-  text-align: center;
+  width: 100%;
   opacity: 0;
   transition: opacity 1s;
-}
-@media (min-width: 576px) {
-  html body main #contact #contacts-list h2 {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 992px) {
-  html body main #contact #contacts-list h2 {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 1920px) {
-  html body main #contact #contacts-list h2 {
-    font-size: 3rem;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 html body main #contact #contacts-list h2 a {
+  font-family: "Hack", monospace;
+  font-size: 1rem;
   color: white;
   margin: 0;
   padding: 0;
   transition: text-decoration-color 300ms;
 }
+@media (min-width: 576px) {
+  html body main #contact #contacts-list h2 a {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  html body main #contact #contacts-list h2 a {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1920px) {
+  html body main #contact #contacts-list h2 a {
+    font-size: 3rem;
+  }
+}
 html body main #contact #contacts-list h2 a:hover {
   text-decoration-color: rgba(0, 0, 0, 0);
 }
-html body main #contact #contacts-list h2 .email::before {
-  font-size: 1rem;
-  vertical-align: middle;
-  content: "\f0e0  ";
+html body main #contact #contacts-list h2:before {
+  margin-right: 1rem;
 }
-html body main #contact #contacts-list h2 .cv::before {
-  font-size: 1rem;
-  vertical-align: middle;
-  content: "\f111  ";
+html body main #contact #contacts-list .email:before {
+  content: "\f0e0";
 }
-html body main #contact #contacts-list h2 .phone::before {
-  font-size: 1rem;
-  vertical-align: middle;
-  content: "\f095  ";
+html body main #contact #contacts-list .cv:before {
+  content: "\f111";
+}
+html body main #contact #contacts-list .phone:before {
+  content: "\f095";
 }
 html body main #contact #contacts-list .list-animation {
   opacity: 100;

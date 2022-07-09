@@ -1,5 +1,5 @@
 // icons
-$fa-font-path: "webfonts";
+$fa-font-path: "./webfonts";
 @import "./fontawesome/scss/fontawesome.scss";
 @import "./fontawesome/scss/solid.scss";
 @import "./fontawesome/scss/brands.scss";
@@ -221,17 +221,28 @@ html {
           flex-wrap: wrap;
         }
         h3 {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
           font-family: "Hack", monospace;
           margin: 1%;
           @include body-font;
           opacity: 0;
           transition: opacity 0.5s;
+          i {
+            margin-right: 1rem;
+          }
         }
         .personal {
-          h3::before {
-            font-size: 1rem;
-            vertical-align: middle;
-            content: "\f111  ";
+          h3 {
+            flex-grow: 1;
+            &:before {
+              @extend %fa-icon;
+              @extend .fa-solid;
+              font-size: 1rem;
+              margin-right: 1rem;
+              content: fa-content($fa-var-circle);
+            }
           }
         }
         .name {
@@ -262,7 +273,8 @@ html {
           opacity: 0;
           transition: opacity 0.5s;
           &::before {
-            margin: 2%;
+            font-size: 1rem;
+            margin-right: 1rem;
             content: ">";
             font-size: inherit;
             font-weight: bold;
@@ -305,13 +317,20 @@ html {
         }
         #contacts-list {
           h2 {
-            font-family: "Hack", monospace;
-            @include body-font;
+            @extend %fa-icon;
+            @extend .fa-solid;
+            font-size: 1rem;
             margin: 3%;
-            text-align: center;
+            width: 100%;
             opacity: 0;
             transition: opacity 1s;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             a {
+              font-family: "Hack", monospace;
+              @include body-font;
               color: white;
               margin: 0;
               padding: 0;
@@ -320,21 +339,18 @@ html {
             a:hover {
               text-decoration-color: rgba(0, 0, 0, 0);
             }
-            .email::before {
-              font-size: 1rem;
-              vertical-align: middle;
-              content: "\f0e0  ";
+            &:before {
+              margin-right: 1rem;
             }
-            .cv::before {
-              font-size: 1rem;
-              vertical-align: middle;
-              content: "\f111  ";
-            }
-            .phone::before {
-              font-size: 1rem;
-              vertical-align: middle;
-              content: "\f095  ";
-            }
+          }
+          .email:before {
+            content: fa-content($fa-var-envelope);
+          }
+          .cv:before {
+            content: fa-content($fa-var-circle);
+          }
+          .phone:before {
+            content: fa-content($fa-var-phone);
           }
           .list-animation {
             opacity: 100;

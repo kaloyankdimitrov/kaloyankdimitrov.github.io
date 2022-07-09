@@ -5,7 +5,9 @@
   "repository": "git@github.com:FreakyCoder/personal-portfolio.git",
   "author": "Kaloyan Dimitrov <kaloyankd.06@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "dev-server": "^0.2.0",
     "sass": "^1.53.0"
   }
 }
