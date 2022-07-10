@@ -273,9 +273,11 @@ html {
           opacity: 0;
           transition: opacity 0.5s;
           &::before {
+            @extend %fa-icon;
+            @extend .fa-solid;
             font-size: 1rem;
             margin-right: 1rem;
-            content: ">";
+            content: fa-content($fa-var-caret-right);
             font-size: inherit;
             font-weight: bold;
             transform: rotate(90deg);
@@ -318,7 +320,6 @@ html {
         #contacts-list {
           h2 {
             @extend %fa-icon;
-            @extend .fa-solid;
             font-size: 1rem;
             margin: 3%;
             width: 100%;
@@ -344,12 +345,19 @@ html {
             }
           }
           .email:before {
+            @extend .fa-solid;
             content: fa-content($fa-var-envelope);
           }
           .cv:before {
-            content: fa-content($fa-var-circle);
+            @extend .fa-solid;
+            content: fa-content($fa-var-align-center);
           }
+		  .github:before {
+			  @extend .fa-brands;
+			  content: fa-content($fa-var-github);
+		  }
           .phone:before {
+            @extend .fa-solid;
             content: fa-content($fa-var-phone);
           }
           .list-animation {

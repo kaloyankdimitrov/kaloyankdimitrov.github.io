@@ -11,7 +11,10 @@
 .fa,
 .fas,
 .fa-solid,
-html body main #contact #contacts-list h2,
+html body main #contact #contacts-list .phone:before,
+html body main #contact #contacts-list .cv:before,
+html body main #contact #contacts-list .email:before,
+html body main #about h3::before,
 html body main #home .personal h3:before,
 .far,
 .fa-regular,
@@ -22,7 +25,8 @@ html body main #home .personal h3:before,
 .fad,
 .fa-duotone,
 .fab,
-.fa-brands {
+.fa-brands,
+html body main #contact #contacts-list .github:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -32,7 +36,7 @@ html body main #home .personal h3:before,
   text-rendering: auto;
 }
 
-html body main #contact #contacts-list h2, html body main #home .personal h3:before {
+html body main #contact #contacts-list h2, html body main #about h3::before, html body main #home .personal h3:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -8216,7 +8220,10 @@ readers do not read off random characters that represent icons */
 }
 .fas,
 .fa-solid,
-html body main #contact #contacts-list h2,
+html body main #contact #contacts-list .phone:before,
+html body main #contact #contacts-list .cv:before,
+html body main #contact #contacts-list .email:before,
+html body main #about h3::before,
 html body main #home .personal h3:before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
@@ -8239,7 +8246,8 @@ html body main #home .personal h3:before {
   src: url("./webfonts/fa-brands-400.woff2") format("woff2"), url("./webfonts/fa-brands-400.ttf") format("truetype");
 }
 .fab,
-.fa-brands {
+.fa-brands,
+html body main #contact #contacts-list .github:before {
   font-family: "Font Awesome 6 Brands";
   font-weight: 400;
 }
@@ -10384,7 +10392,7 @@ html body main #about h3 {
 html body main #about h3::before {
   font-size: 1rem;
   margin-right: 1rem;
-  content: ">";
+  content: "\f0da";
   font-size: inherit;
   font-weight: bold;
   transform: rotate(90deg);
@@ -10479,7 +10487,10 @@ html body main #contact #contacts-list .email:before {
   content: "\f0e0";
 }
 html body main #contact #contacts-list .cv:before {
-  content: "\f111";
+  content: "\f037";
+}
+html body main #contact #contacts-list .github:before {
+  content: "\f09b";
 }
 html body main #contact #contacts-list .phone:before {
   content: "\f095";
