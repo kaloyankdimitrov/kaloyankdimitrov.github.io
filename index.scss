@@ -119,6 +119,9 @@ html {
   .about-background {
     background-color: #01c1d3;
   }
+  .projects-background {
+	  background-color: #800080;
+  }
   .contact-background {
     background-color: #441fec;
   }
@@ -307,7 +310,19 @@ html {
           }
         }
       }
-
+      #projects {
+        h1 {
+          text-align: center;
+          font-family: "Poppins", sans-serif;
+          @include title-font;
+          margin: 5%;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        .opacity-animation {
+          opacity: 100;
+        }
+      }
       #contact {
         h1 {
           text-align: center;

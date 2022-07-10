@@ -91,6 +91,15 @@ let sections = [
 		},
 	},
 	{
+		id: "projects",
+		animation: () => {
+			document.getElementById("projects-section-title").classList.add("opacity-animation");
+		},
+		clearAnimation: () => {
+			document.getElementById("projects-section-title").classList.remove("opacity-animation");
+		}
+	},
+	{
 		id: "contact",
 		animation: () => {
 			document
