@@ -125,7 +125,7 @@ let sections = [
         .getElementById("projects-section-title")
         .classList.remove("opacity-animation");
       Array.from(document.getElementById("projects-list").children).forEach(
-        (element) => element.classList.remove("list-animation")
+        (element) => element.classList.remove("opacity-animation")
       );
     },
   },
