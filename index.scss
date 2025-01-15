@@ -46,7 +46,7 @@ $screen-md-min: 768px;
 $screen-lg-min: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1920px;
+$screen-xl-min: 2560px;
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
@@ -120,7 +120,7 @@ html {
     background-color: #01c1d3;
   }
   .projects-background {
-	  background-color: #800080;
+    background-color: #800080;
   }
   .contact-background {
     background-color: #441fec;
@@ -258,11 +258,35 @@ html {
       }
 
       #about {
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        img {
+          border-radius: 50%;
+          height: 6em;
+          margin-bottom: 3%;
+          opacity: 0;
+          transition: opacity 0.5s;
+          @include sm {
+            height: 12em;
+          }
+          @include lg {
+            height: 16em;
+          }
+          @include xl {
+            height: 18em;
+          }
+          width: auto;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
         h1 {
           text-align: center;
           font-family: "Poppins", sans-serif;
           @include title-font;
-          margin: 5%;
+          margin: 5% 5% 2% 5%;
           opacity: 0;
           transition: opacity 0.3s;
         }
@@ -367,10 +391,10 @@ html {
             @extend .fa-solid;
             content: fa-content($fa-var-align-center);
           }
-		  .github:before {
-			  @extend .fa-brands;
-			  content: fa-content($fa-var-github);
-		  }
+          .github:before {
+            @extend .fa-brands;
+            content: fa-content($fa-var-github);
+          }
           .phone:before {
             @extend .fa-solid;
             content: fa-content($fa-var-phone);
