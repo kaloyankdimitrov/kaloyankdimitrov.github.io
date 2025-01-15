@@ -199,10 +199,8 @@ const calculateSize = (el) => {
     Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   el.height = (315 * el.width) / 560;
 };
-const sizeIframe = () => {
-  console.log("resize");
+const sizeIframe = () =>
   Array.from(document.getElementsByTagName("iframe")).forEach(calculateSize);
-};
 sizeIframe();
 
 window.onresize = sizeIframe;
