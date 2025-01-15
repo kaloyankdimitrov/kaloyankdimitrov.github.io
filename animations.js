@@ -191,3 +191,20 @@ Array.from(document.getElementById("header").children).forEach((link) => {
     }
   });
 });
+
+// iframes
+const calculateSize = (el) => {
+  el.width =
+    0.8 *
+    Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  el.height = (315 * el.width) / 560;
+};
+const sizeIframe = () => {
+  console.log("resize");
+  Array.from(document.getElementsByTagName("iframe")).forEach(calculateSize);
+};
+Array.from(document.getElementsByTagName("iframe")).forEach(
+  (el) => (el.onload = () => calculateSize(el))
+);
+
+window.onresize = sizeIframe;
