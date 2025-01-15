@@ -203,8 +203,6 @@ const sizeIframe = () => {
   console.log("resize");
   Array.from(document.getElementsByTagName("iframe")).forEach(calculateSize);
 };
-Array.from(document.getElementsByTagName("iframe")).forEach(
-  (el) => (el.onload = () => calculateSize(el))
-);
+sizeIframe();
 
 window.onresize = sizeIframe;
