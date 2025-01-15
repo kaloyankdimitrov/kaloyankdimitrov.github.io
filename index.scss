@@ -343,6 +343,28 @@ html {
           opacity: 0;
           transition: opacity 0.3s;
         }
+        #projects-list {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .project {
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
+        h3 {
+          font-family: "Hack", monospace;
+          text-align: center;
+          @include body-font;
+          margin: 2%;
+        }
+        p {
+          font-family: "Hack", monospace;
+          text-align: center;
+          @include body-font;
+          margin: 2%;
+        }
+
         .opacity-animation {
           opacity: 100;
         }

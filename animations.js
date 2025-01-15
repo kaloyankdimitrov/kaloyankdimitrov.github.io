@@ -95,10 +95,10 @@ let sections = [
         .classList.remove("opacity-animation");
       document
         .getElementById("profile-img")
-        .classList.remove("opacity-animation"),
-        Array.from(document.getElementById("bio-list").children).forEach(
-          (element) => element.classList.remove("list-animation")
-        );
+        .classList.remove("opacity-animation");
+      Array.from(document.getElementById("bio-list").children).forEach(
+        (element) => element.classList.remove("list-animation")
+      );
     },
   },
   {
@@ -107,11 +107,26 @@ let sections = [
       document
         .getElementById("projects-section-title")
         .classList.add("opacity-animation");
+      // projects animation
+      setTimeoutWithCancel(
+        () =>
+          Array.from(document.getElementById("projects-list").children).forEach(
+            (element, ind) =>
+              setTimeoutWithCancel(
+                () => element.classList.add("opacity-animation"),
+                ind * 200
+              )
+          ),
+        300
+      );
     },
     clearAnimation: () => {
       document
         .getElementById("projects-section-title")
         .classList.remove("opacity-animation");
+      Array.from(document.getElementById("projects-list").children).forEach(
+        (element) => element.classList.remove("list-animation")
+      );
     },
   },
   {
