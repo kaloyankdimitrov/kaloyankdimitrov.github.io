@@ -351,6 +351,9 @@ html {
         .project {
           opacity: 0;
           transition: opacity 0.5s;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         h3 {
           font-family: "Hack", monospace;
