@@ -2,31 +2,27 @@ name: Pages Deploy
 
 on:
   push:
-    branches: [ "master" ]
-  
+    branches: ["master"]
+
   workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      -
-        name: Copy files to /public
+      - name: Copy files to /public
         run: |
           mkdir public
-          cp -r index.html animations.js Kaloyan_Dimitrov_CV.pdf webfonts public
-      - 
-        name: Build Sass
+          cp -r index.html animations.js Kaloyan_Dimitrov_CV.pdf webfonts assets public
+      - name: Build Sass
         uses: gha-utilities/sass-build@v0.4.9
         with:
           source: ./index.scss
           destination: ./public/index.css
 
-      -
-        name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
