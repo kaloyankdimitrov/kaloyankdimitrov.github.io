@@ -236,6 +236,10 @@ html {
             margin-right: 1rem;
           }
         }
+        iframe {
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
         .personal {
           h3 {
             flex-grow: 1;

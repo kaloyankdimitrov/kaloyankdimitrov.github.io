@@ -42,6 +42,12 @@ let sections = [
           }
         );
       }, 600);
+      setTimeoutWithCancel(() => {
+        document
+          .getElementById("makerportfolio")
+          .classList.add("opacity-animation");
+        console.log(document.getElementById("makerportfolio"));
+      }, 1100);
     },
     clearAnimation: () => {
       // reset all home animations
@@ -58,6 +64,9 @@ let sections = [
           );
         }
       );
+      document
+        .getElementById("makerportfolio")
+        .classList.remove("opacity-animation");
     },
   },
   {
