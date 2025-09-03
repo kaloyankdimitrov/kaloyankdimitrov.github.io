@@ -176,6 +176,9 @@ let update = () => {
     prevElement.style.opacity = 0;
     prevElement.style.display = "none";
     sections[prev].clearAnimation();
+    document
+      .getElementById(sections[prev].id)
+      .style.setProperty("--pseudo-opacity", 0);
   }
   // change body background
   document.body.className = sections[current].id + "-background";
@@ -184,6 +187,14 @@ let update = () => {
   currElement.style.opacity = 100;
   currElement.style.display = "block";
   setTimeoutWithCancel(sections[current].animation, 500);
+  setTimeoutWithCancel(
+    () =>
+      document
+        .getElementById(sections[prev].id)
+        .style.setProperty("--pseudo-opacity", 100),
+    3000
+  );
+
   prev = current;
 };
 

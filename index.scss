@@ -81,6 +81,7 @@ $title-sm: 5rem;
 $title-lg: 10rem;
 $title-xl: 20rem;
 @mixin title-font {
+  font-family: "Poppins", sans-serif;
   font-size: $title-regular;
   @include sm {
     font-size: $title-sm;
@@ -92,12 +93,31 @@ $title-xl: 20rem;
     font-size: $title-xl;
   }
 }
+// subtitle
+$st-regular: 2rem;
+$st-sm: 3rem;
+$st-lg: 4rem;
+$st-xl: 6rem;
+@mixin subtitle-font {
+  font-family: "Hack", monospace;
+  font-size: $st-regular;
+  @include sm {
+    font-size: $st-sm;
+  }
+  @include lg {
+    font-size: $st-lg;
+  }
+  @include xl {
+    font-size: $st-xl;
+  }
+}
 // body
 $fs-regular: 1rem;
 $fs-sm: 1.5rem;
 $fs-lg: 2rem;
 $fs-xl: 3rem;
 @mixin body-font {
+  font-family: "Hack", monospace;
   font-size: $fs-regular;
   @include sm {
     font-size: $fs-sm;
@@ -153,8 +173,8 @@ html {
         overflow: hidden;
         background: none;
         color: white;
-        font-family: "Source Code Pro", mono space;
         @include body-font;
+        font-family: "Source Code Pro", mono space;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -209,11 +229,20 @@ html {
         right: 0;
         bottom: 0;
         padding: 0 5% 0 5%;
+        --pseudo-opacity: 0;
+      }
+      section::after {
+        content: "© 2025 Kaloyan Dimitrov";
+        display: block;
+        text-align: center;
+        @include body-font;
+        padding: 2%;
+        opacity: var(--pseudo-opacity);
+        transition: opacity 0.5s;
       }
 
       #home {
         h1 {
-          font-family: "Poppins", sans-serif;
           margin: 1%;
           @include title-font;
         }
@@ -227,7 +256,6 @@ html {
           display: flex;
           flex-direction: row;
           align-items: center;
-          font-family: "Hack", monospace;
           margin: 1%;
           @include body-font;
           opacity: 0;
@@ -288,9 +316,8 @@ html {
         }
         h1 {
           text-align: center;
-          font-family: "Poppins", sans-serif;
           @include title-font;
-          margin: 5% 5% 2% 5%;
+          margin: 2%;
           opacity: 0;
           transition: opacity 0.3s;
         }
@@ -298,7 +325,6 @@ html {
           display: flex;
           flex-direction: row;
           align-items: center;
-          font-family: "Hack", monospace;
           @include body-font;
           margin: 2%;
           opacity: 0;
@@ -341,9 +367,8 @@ html {
       #projects {
         h1 {
           text-align: center;
-          font-family: "Poppins", sans-serif;
           @include title-font;
-          margin: 5%;
+          margin: 2%;
           opacity: 0;
           transition: opacity 0.3s;
         }
@@ -358,16 +383,17 @@ html {
           display: flex;
           flex-direction: column;
           align-items: center;
+          > img {
+            max-width: 100%;
+          }
         }
         h3 {
-          font-family: "Hack", monospace;
           text-align: center;
-          @include body-font;
-          margin: 2%;
+          @include subtitle-font;
+          margin: 1%;
         }
         p {
-          font-family: "Hack", monospace;
-          text-align: center;
+          text-align: justify;
           @include body-font;
           margin: 2%;
         }
@@ -379,7 +405,6 @@ html {
       #contact {
         h1 {
           text-align: center;
-          font-family: "Poppins", sans-serif;
           @include title-font;
           margin: 5%;
           opacity: 0;
@@ -398,7 +423,6 @@ html {
             justify-content: center;
             align-items: center;
             a {
-              font-family: "Hack", monospace;
               @include body-font;
               color: white;
               margin: 0;
