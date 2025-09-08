@@ -46,7 +46,6 @@ let sections = [
         document
           .getElementById("makerportfolio")
           .classList.add("opacity-animation");
-        console.log(document.getElementById("makerportfolio"));
       }, 1100);
     },
     clearAnimation: () => {
