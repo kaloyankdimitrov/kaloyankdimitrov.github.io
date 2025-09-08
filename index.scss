@@ -428,8 +428,7 @@ html {
           h2 {
             @extend %fa-icon;
             font-size: 1rem;
-            margin: 3%;
-            width: 100%;
+            margin: 3% auto;
             opacity: 0;
             transition: opacity 1s;
             display: flex;
