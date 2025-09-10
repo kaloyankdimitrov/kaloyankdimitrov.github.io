@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kaloyan Dimitrov</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav id="header">
+        <a section="home">Home</a>
+        <a section="about">About Me</a>
+        <a section="projects">Projects</a>
+        <a section="contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <h1 id="first-name" class="name">Kaloyan</h1>
+        <h1 id="last-name" class="name">Dimitrov</h1>
+        <div class="qualifications personal">
+          <h3>Student</h3>
+          <h3>Engineer</h3>
+          <h3>Makerspace enthusiast</h3>
+        </div>
+        <br />
+        <div class="qualifications">
+          <h3><i class="fa-solid fa-robot"></i>Mechatronics</h3>
+          <h3><i class="fa-solid fa-microchip"></i>Embedded programming</h3>
+          <h3><i class="fa-brands fa-android"></i>Autonomous vehicles</h3>
+          <h3><i class="fa-solid fa-binoculars"></i>Computer vision</h3>
+          <h3><i class="fa-brands fa-html5"></i>Web development</h3>
+          <h3><i class="fa fa-flask"></i>Biology</h3>
+        </div>
+        <iframe
+          src="https://www.youtube.com/embed/NRupNOPu0ow?si=ewjhnzHscS4VoG2j"
+          title="Maker Portfolio"
+          id="makerportfolio"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section id="about">
+        <h1 id="about-section-title">About Me</h1>
+        <div class="container">
+          <img id="profile-img" src="/assets/images/profile.jpg" />
+          <div id="bio-list">
+            <h3 class="first-column" style="grid-row: 1 / 1">
+              Born in Sofia, Bulgaria
+            </h3>
+            <h3 class="first-column" style="grid-row: 2 / 2">
+              Student at Yale University
+            </h3>
+            <h3 clas="first-column" style="grid-row: 3 / 3">
+              Pursuing a B.S. in Electrical Engineering(ABET)
+            </h3>
+            <h3 class="second-column" style="grid-row: 1 / 1">
+              Started competitive programming at age 10 and physics at 13
+            </h3>
+            <h3 class="second-column" style="grid-row: 2 / 2">
+              Discovered my true love(engineering) in high school
+            </h3>
+            <h3 class="second-column" style="grid-row: 3 / 3">
+              Passionate about combining engineering and biology these days
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h1 id="projects-section-title">Projects</h1>
+        <div id="projects-list">
+          <div class="project">
+            <h3>PCHELICHKA</h3>
+            <p>
+              PCHELICHKA is an autonomous drone-bee, built as a continuation of
+              my research. I came up with an innovative end effector for
+              pollination without damaging the plant, and designed and tuned the
+              control strategy, while my partner provided the hardware. This is
+              an early prototype video:
+            </p>
+            <iframe
+              src="https://www.youtube.com/embed/zcQ6GlBiEhE?si=w0sFrW5uowyGdB49"
+              title="PCHELICHKA demo"
+              id="pchelichka-demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              The drone uses only its camera feed, received over a digital
+              wireless link, and inertial measurement unit for navigation and
+              stabilization. The motors are controlled with a cascading PID
+              controller from position to velocity to acceleration to pitch,
+              roll, and yaw rate commands, which are then sent to the drone
+              through the FPV radio.
+              <b>The drone is entirely autonomous form lift-off to landing.</b>
+            </p>
+            <img
+              src="assets/images/pchelichkaconfig.png"
+              alt="Pchelichka dashboard user interface"
+            />
+            <p>
+              I also built this dashboard for management of the system. It
+              allows for easy setup of the drone and an interface to the AI I
+              trained. The computer vision model takes images from the camera
+              feed and looks for signs of diseases on the plants to alert the
+              user of threats to yield.
+            </p>
+          </div>
+          <div class="project">
+            <h3>Swarm Guidance and Communication System</h3>
+            <p>
+              My research involved proposing an algorithm for the coordination
+              of robotic swarms with no central control and limited
+              communication range. I further built a simulation environment for
+              its evaluation and compared its effectiveness to other approaches
+              with similar constraints.
+            </p>
+            <img
+              src="assets/images/sgcsarticle.png"
+              alt="Pchelichka dashboard user interface"
+            />
+            <a href="https://www.mdpi.com/2227-9717/12/10/2122"
+              >https://www.mdpi.com/2227-9717/12/10/2122</a
+            >
+          </div>
+          <div class="project">
+            <h3>FIRST Robotics Competition</h3>
+            <p>
+              I am a co-founder of the only Bulgarian FRC team
+              <b>ACS Phoenix #9089</b>. We have been participating in the
+              competition since the 2023 season, and I captained the team during
+              the 2024 and 2025 seasons.
+            </p>
+            <iframe
+              src="https://www.youtube.com/embed/lRCqs9KQ2Lk?si=rAub_DZSjQPcS0El"
+              title="FRC 2025"
+              id="frc2025"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              For the 2025 season, I grew the team to over 30 people with a
+              $10,000 budget, and we secured a playoff spot for the first time.
+              On top of my organizational duties as captain, I took the lead on
+              developing the elevator, arm, and intake mechanisms, as well as
+              programming and autonomous routines.
+            </p>
+            <iframe
+              src="https://www.youtube.com/embed/gQ9tPryZoZI?si=Njk58mPafG8NIs31"
+              title="FRC 2024"
+              id="frc2024"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              In 2024, I took over as captain and we became 25/51, compared to
+              48/49 in 2023. I led our fundraising efforts, nearly tripling the
+              team&apos;s budget from the previous year, while also developing
+              the software and the intake mechanism.
+            </p>
+            <iframe
+              src="https://youtube.com/embed/BbsdK7UAn3s"
+              title="FRC 2023"
+              id="frc2023"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              Our inaugural season was an emotional rollercoaster, so I was
+              mainly performing hardware troubleshooting and scrapping together
+              last-minute software.
+            </p>
+          </div>
+          <div class="project">
+            <h3>SHARO</h3>
+            <iframe
+              src="https://youtube.com/embed/3D01beR75bE"
+              title="SHARO Dog"
+              id="sharowalk"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              SHARO is a robot dog I built again with a partner. I was mainly
+              responsible for the software of the robot, which was built from
+              scratch. I came up with a novel way to define the motion of its
+              limbs with Bézier curves.
+            </p>
+            <iframe
+              src="https://www.youtube.com/embed/NTSvQLtCWRg?si=OH0kWpYkZHxUvKOV"
+              title="Bézier curves"
+              id="bezier"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              I also integrated computer vision models for facial detection and
+              emotion classification, which made it particularly engaging for
+              kids at various events. To fit all the code on a Raspberry Pi 4, I
+              optimized the code with multiprocessing and moved the inverse
+              kinematics calculations to Rust.
+            </p>
+            <img src="assets/images/sharogui.png" />
+            <p>
+              This control panel(desktop and mobile app available) is used to
+              preview the camera and sensors while controlling the movement of
+              the robot.
+            </p>
+          </div>
+          <div class="project">
+            <h3>Paintball</h3>
+            <p>
+              I was contacted by a local chain of paintball arenas to create a
+              device for a king-of-the-hill style game. I designed and
+              fabricated a total of 5 "checkpoints".
+            </p>
+            <img src="assets/images/koth.png" />
+            <p>
+              An esp32 is the "brain" of each checkpoint and controls 2
+              high-power LEDs through Darilngton transistors. A UPS battery
+              powers the entire system, and the esp32 through a step-down
+              converter. The checkpoints are wirelessly set up before play and
+              measure the duration that each team controls the checkpoint,
+              producing a winner at the end. They are also able to sync with
+              each other through a dedicated NRF24L01+ radio.
+            </p>
+          </div>
+          <div class="project">
+            <h3>Space Challenges</h3>
+            <p>
+              I attended a 5-week-long summer bootcamp where along with a
+              rigorous academic program, consisting of daily lectures and weekly
+              survival quizzes, we were separated into teams with the task of
+              building ground stations to communicate with a real satellite.
+            </p>
+            <iframe
+              src="https://www.youtube.com/embed/jVWVmJUlkUs?si=9bSfj7R6AbvsYu7X"
+              title="Space Challenges prototype demo"
+              id="space-challenges-demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <p>
+              I was the team captain and mainly focused on the electroncis and
+              software. Along with control of the station, I also built a
+              satellite tracker with Rust that automatically started the station
+              when a satellite pass is occuring. In the end, we were awarded for
+              best project documentation and I was among the few to successfully
+              graduate the bootcamp.
+            </p>
+          </div>
+          <div class="project">
+            <h3>LocusLibri</h3>
+            <p>
+              LocusLibri is a social media for bookworms. It lets users keep a
+              reading list of books they enjoy and matches users based on their
+              reading preferences.
+            </p>
+            <img src="assets/images/locuslibri.png" />
+            <p>
+              I made the entire web platform myself, back-end to front-end and
+              marketing materials.
+            </p>
+          </div>
+          <div class="project">
+            <h3>ParoleMemo</h3>
+            <p>
+              ParoleMemo is a digital dictionary-notebook to assisst learners
+              with vocabulary.
+            </p>
+            <img src="assets/images/parolememo.png" />
+            <p>
+              I built the app entirely by myself with React, MongoDB, and
+              Golang.
+            </p>
+          </div>
+          <div class="project">
+            <h3>Fortamentum</h3>
+            <p>
+              I was a part of a 3-person team that participated in the NSS Space
+              Settlement Contest. We produced a 50-page proposal for a space
+              station as a future human habitat, complete with engineering
+              design, governance strucutre, and economical analysis. I
+              personally came up and documented the financial services offered,
+              governance hierarchy, power supply, communications, transport
+              ships, port, and storage.
+            </p>
+            <img src="assets/images/FortamentumCover.png" />
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h1 id="contact-section-title">Contact</h1>
+        <div id="contacts-list">
+          <h2 class="email">
+            <a href="mailto:kaloyankd.06@gmail.com">kaloyankd.06@gmail.com</a>
+          </h2>
+          <h2 class="email">
+            <a href="mailto:kaloyan.dimitrov@yale.edu"
+              >kaloyan.dimitrov@yale.edu</a
+            >
+          </h2>
+          <h2 class="cv">
+            <a href="/Kaloyan_Dimitrov_CV.pdf">Curriculum Vitae</a>
+          </h2>
+          <h2 class="github">
+            <a href="https://github.com/kaloyankdimitrov"
+              >kaloyankdimitrov@GitHub</a
+            >
+          </h2>
+          <h2 class="phone"><a href="tel:+12036767995">(203)-676-7995</a></h2>
+          <h2 class="phone"><a href="tel:+359878822250">+359878822250</a></h2>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="animations.js"></script>
+</html>
