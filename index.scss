@@ -149,7 +149,8 @@ html {
   body {
     margin: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     box-sizing: border-box;
     transition: background-color 0.5s ease-in-out;
     color: white;
@@ -214,37 +215,88 @@ html {
 
     main {
       flex: 1 0 auto;
-      position: relative;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      display: flex;
+      flex-direction: column;
       section {
+        flex: 1 0 auto;
+        flex-direction: column;
+        min-width: 0;
         opacity: 0;
         display: none;
         transition: opacity 0.5s;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 0 5% 0 5%;
+        padding: 0 5%;
         --pseudo-opacity: 0;
       }
       section::after {
-        content: "© 2025 Kaloyan Dimitrov";
+        content: "© 2026 Kaloyan Dimitrov";
         display: block;
+        flex-shrink: 0;
+        margin-top: auto;
+        padding: 2rem 0 1rem;
         text-align: center;
-        @include body-font;
-        padding: 2%;
+        font-family: "Hack", monospace;
+        font-size: 0.75rem;
+        line-height: 1.5;
         opacity: var(--pseudo-opacity);
         transition: opacity 0.5s;
       }
 
       #home {
+        .home-intro {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+          margin: 2% 0;
+          @include sm {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: clamp(1.5rem, 3vw, 3rem);
+          }
+        }
+        .home-name {
+          min-width: 0;
+        }
+        .home-intro h1 {
+          font-size: clamp(2.5rem, 8vw, 10rem);
+        }
+        #profile-img {
+          flex-shrink: 0;
+          width: clamp(8rem, 22vw, 18rem);
+          height: auto;
+          object-fit: contain;
+          opacity: 0;
+          transition: opacity 0.5s;
+          &.opacity-animation {
+            opacity: 1;
+          }
+        }
         h1 {
           margin: 1%;
           @include title-font;
+        }
+        #home-summary {
+          max-width: 65ch;
+          font-family: "Hack", monospace;
+          font-size: clamp(1.125rem, 1.8vw, 1.625rem);
+          line-height: 1.7;
+          ul {
+            margin: 1rem 0;
+            padding-left: 1.4em;
+          }
+          li + li {
+            margin-top: 0.5em;
+          }
+          opacity: 0;
+          transition: opacity 0.5s;
+          &.opacity-animation { opacity: 1; }
+        }
+        .home-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem 2rem;
+          margin: 1.5rem 0;
+          a { color: inherit; text-underline-offset: 0.25em; }
         }
         .qualifications {
           margin-top: 1%;
@@ -295,25 +347,6 @@ html {
           flex-direction: column;
           align-items: center;
         }
-        img {
-          border-radius: 50%;
-          height: 6em;
-          margin-bottom: 3%;
-          opacity: 0;
-          transition: opacity 0.5s;
-          @include sm {
-            height: 12em;
-          }
-          @include lg {
-            height: 16em;
-          }
-          @include xl {
-            height: 18em;
-          }
-          width: auto;
-          aspect-ratio: 1/1;
-          object-fit: cover;
-        }
         h1 {
           text-align: center;
           @include title-font;
@@ -321,38 +354,18 @@ html {
           opacity: 0;
           transition: opacity 0.3s;
         }
-        h3 {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          @include body-font;
-          margin: 2%;
-          opacity: 0;
-          transition: opacity 0.5s;
-          &::before {
-            @extend %fa-icon;
-            @extend .fa-solid;
-            font-size: 1rem;
-            margin-right: 1rem;
-            content: fa-content($fa-var-caret-right);
-            font-size: inherit;
-            font-weight: bold;
-            transform: rotate(90deg);
-            transition: transform 0.5s;
-          }
-        }
         #bio-list {
-          display: grid;
-          grid-template-columns: auto auto;
-          grid-template-rows: auto auto auto;
-          justify-items: stretch;
-          align-items: stretch;
-          .first-column {
-            grid-column: 1 / 1;
+          width: 100%;
+          max-width: 65ch;
+          font-family: "Hack", monospace;
+          font-size: clamp(1rem, 1.5vw, 1.375rem);
+          line-height: 1.8;
+          p {
+            margin: 0 0 1.5rem;
+            opacity: 0;
+            transition: opacity 0.5s;
           }
-          .second-column {
-            grid-column: 2 / 2;
-          }
+          .list-animation { opacity: 1; }
         }
         .opacity-animation {
           opacity: 100;
@@ -385,6 +398,22 @@ html {
           align-items: center;
           img {
             max-width: 80%;
+          }
+        }
+        .paintball-gallery {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: clamp(0.5rem, 2vw, 1.5rem);
+          width: 100%;
+          max-width: 70rem;
+          img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 0.5rem;
           }
         }
         h3 {
@@ -452,10 +481,6 @@ html {
           .github:before {
             @extend .fa-brands;
             content: fa-content($fa-var-github);
-          }
-          .phone:before {
-            @extend .fa-solid;
-            content: fa-content($fa-var-phone);
           }
           .list-animation {
             opacity: 100;

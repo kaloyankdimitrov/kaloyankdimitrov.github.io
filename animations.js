@@ -19,17 +19,24 @@ let sections = [
     animation: () => {
       // trigger fade in animation
       document
-        .getElementById("home")
-        .children["first-name"].classList.add("opacity-animation");
+        .getElementById("first-name").classList.add("opacity-animation");
+      // delay profile picture fade in animation
+      setTimeoutWithCancel(
+        () =>
+          document
+            .getElementById("profile-img")
+            .classList.add("opacity-animation"),
+        300
+      );
       // delay fade in animation
       setTimeoutWithCancel(
         () =>
           document
-            .getElementById("home")
-            .children["last-name"].classList.add("opacity-animation"),
+            .getElementById("last-name").classList.add("opacity-animation"),
         300
       );
       setTimeoutWithCancel(() => {
+        document.getElementById("home-summary").classList.add("opacity-animation");
         Array.from(document.getElementsByClassName("qualifications")).forEach(
           (wrapper) => {
             Array.from(wrapper.getElementsByTagName("h3")).forEach(
@@ -50,12 +57,14 @@ let sections = [
     },
     clearAnimation: () => {
       // reset all home animations
+      document.getElementById("home-summary").classList.remove("opacity-animation");
       document
-        .getElementById("home")
-        .children["first-name"].classList.remove("opacity-animation");
+        .getElementById("profile-img")
+        .classList.remove("opacity-animation");
       document
-        .getElementById("home")
-        .children["last-name"].classList.remove("opacity-animation");
+        .getElementById("first-name").classList.remove("opacity-animation");
+      document
+        .getElementById("last-name").classList.remove("opacity-animation");
       Array.from(document.getElementsByClassName("qualifications")).forEach(
         (wrapper) => {
           Array.from(wrapper.getElementsByTagName("h3")).forEach((element) =>
@@ -75,14 +84,6 @@ let sections = [
       document
         .getElementById("about-section-title")
         .classList.add("opacity-animation");
-      // delay profile picture fade in animation
-      setTimeoutWithCancel(
-        () =>
-          document
-            .getElementById("profile-img")
-            .classList.add("opacity-animation"),
-        300
-      );
       // bio animation
       setTimeoutWithCancel(
         () =>
@@ -100,9 +101,6 @@ let sections = [
       // reset all about animations
       document
         .getElementById("about-section-title")
-        .classList.remove("opacity-animation");
-      document
-        .getElementById("profile-img")
         .classList.remove("opacity-animation");
       Array.from(document.getElementById("bio-list").children).forEach(
         (element) => element.classList.remove("list-animation")
@@ -184,7 +182,7 @@ let update = () => {
   // show new section and trigger its animations
   const currElement = document.getElementById(sections[current].id);
   currElement.style.opacity = 1;
-  currElement.style.display = "block";
+  currElement.style.display = "flex";
   setTimeoutWithCancel(sections[current].animation, 500);
   setTimeoutWithCancel(
     () => currElement.style.setProperty("--pseudo-opacity", 1),
@@ -212,7 +210,7 @@ const navigateFromHash = () => {
   });
 };
 
-navLinks.forEach((link) => {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     // Keep modified clicks available for opening links in a new tab.
     if (event.button !== 0 || event.metaKey || event.ctrlKey ||

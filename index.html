@@ -27,46 +27,49 @@
     </header>
     <main>
       <section id="home">
-        <h1 id="first-name" class="name">Kaloyan</h1>
-        <h1 id="last-name" class="name">Dimitrov</h1>
-        <div class="qualifications personal">
-          <h3>Student</h3>
-          <h3>Engineer</h3>
-          <h3>Makerspace enthusiast</h3>
+        <div class="home-intro">
+          <div class="home-name">
+            <h1 id="first-name" class="name">Kaloyan</h1>
+            <h1 id="last-name" class="name">Dimitrov</h1>
+          </div>
+          <img id="profile-img" src="/assets/images/profile_transp.png" alt="Portrait of Kaloyan Dimitrov" />
         </div>
-        <br />
+        <div id="home-summary">
+          <ul>
+            <li>Sophomore studying Electrical Engineering at Yale University</li>
+            <li>Building embedded systems and autonomous robots</li>
+            <li>Developing communications and control systems</li>
+            <li>Working as a lab technician and undergraduate learning assistant(TA)</li>
+          </ul>
+          <div class="home-links">
+            <a href="/Dimitrov_Kaloyan_CV.pdf">Download résumé</a>
+          </div>
+        </div>
         <div class="qualifications">
           <h3><i class="fa-solid fa-robot"></i>Mechatronics</h3>
           <h3><i class="fa-solid fa-microchip"></i>Embedded programming</h3>
           <h3><i class="fa-brands fa-android"></i>Autonomous vehicles</h3>
-          <h3><i class="fa-solid fa-binoculars"></i>Computer vision</h3>
-          <h3><i class="fa-brands fa-html5"></i>Web development</h3>
-          <h3><i class="fa fa-flask"></i>Biology</h3>
+          <h3><i class="fa-solid fa-sliders" aria-hidden="true"></i>Control Theory</h3>
+          <h3><i class="fa-solid fa-satellite" aria-hidden="true"></i>Space</h3>
+          <h3><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>Communications</h3>
         </div>
       </section>
       <section id="about">
         <h1 id="about-section-title">About Me</h1>
         <div class="container">
-          <img id="profile-img" src="/assets/images/profile.jpg" />
           <div id="bio-list">
-            <h3 class="first-column" style="grid-row: 1 / 1">
-              Born in Sofia, Bulgaria
-            </h3>
-            <h3 class="first-column" style="grid-row: 2 / 2">
-              Student at Yale University
-            </h3>
-            <h3 clas="first-column" style="grid-row: 3 / 3">
-              Pursuing a B.S. in Electrical Engineering(ABET)
-            </h3>
-            <h3 class="second-column" style="grid-row: 1 / 1">
-              Started competitive programming at age 10 and physics at 13
-            </h3>
-            <h3 class="second-column" style="grid-row: 2 / 2">
-              Discovered my true love(engineering) in high school
-            </h3>
-            <h3 class="second-column" style="grid-row: 3 / 3">
-              Passionate about combining engineering and biology these days
-            </h3>
+            <p>I’m from Sofia, Bulgaria. I started competitive programming at ten
+              and physics at thirteen, and discovered my love of engineering in
+              high school. Building things gave me a way to bring those interests
+              together.</p>
+            <p>Since then, I’ve worked on autonomous drones, a robot dog, and
+              electronics for real-world games, and helped build and lead an FRC
+              team. I enjoy the process of turning an idea into something that
+              works, from writing control software to troubleshooting hardware.</p>
+            <p>At Yale, I’m continuing to develop my foundation in electrical
+              engineering. I want to deepen my experience with embedded systems
+              and robotics, while exploring how engineering and biology can
+              inform each other.</p>
           </div>
         </div>
       </section>
@@ -82,7 +85,7 @@
               control strategy, while my partner provided the hardware. 
             </p>
             <p>
-              This is the first fully autonomous flight(very dear to my heart):
+              This is the first fully autonomous flight(very dear to my heart) in my living room with no safety precautions, and a lot of trust in the control system:
             </p>
             <iframe
               src="https://www.youtube.com/embed/zcQ6GlBiEhE?si=w0sFrW5uowyGdB49"
@@ -115,9 +118,33 @@
             </p>
           </div>
           <div class="project">
+            <h3>Paintball</h3>
+            <p>
+              I was contacted by a local chain of paintball arenas to create a
+              device for a king-of-the-hill style game. I designed and
+              fabricated a total of 5 "checkpoints".
+            </p>
+            <div class="paintball-gallery" aria-label="Paintball checkpoint gallery">
+              <!-- Replace the repeated images with additional project photos when available. -->
+              <img src="assets/images/koth.png" alt="Paintball game checkpoint" loading="lazy" />
+              <img src="assets/images/koth.png" alt="Paintball game checkpoint (temporary repeated photo)" loading="lazy" />
+              <img src="assets/images/koth.png" alt="Paintball game checkpoint (temporary repeated photo)" loading="lazy" />
+              <img src="assets/images/koth.png" alt="Paintball game checkpoint (temporary repeated photo)" loading="lazy" />
+            </div>
+            <p>
+              An esp32 is the "brain" of each checkpoint and controls 2
+              high-power LEDs through Darilngton transistors. A UPS battery
+              powers the entire system, and the esp32 through a step-down
+              converter. The checkpoints are wirelessly set up before play and
+              measure the duration that each team controls the checkpoint,
+              producing a winner at the end. They are also able to sync with
+              each other through a dedicated NRF24L01+ radio.
+            </p>
+          </div>
+          <div class="project">
             <h3>Swarm Guidance and Communication System</h3>
             <p>
-              My research involved proposing an algorithm for the coordination
+              My high school research involved proposing an algorithm for the coordination
               of robotic swarms with no central control and limited
               communication range. I further built a simulation environment for
               its evaluation and compared its effectiveness to other approaches
@@ -199,7 +226,7 @@
             <p>
               SHARO is a robot dog I built again with a partner. I was mainly
               responsible for the software of the robot, which was built from
-              scratch. I came up with a novel way to define the motion of its
+              scratch(pre-AI too). I came up with a novel way to define the motion of its
               limbs with Bézier curves.
             </p>
             <iframe
@@ -223,24 +250,6 @@
               This control panel(desktop and mobile app available) is used to
               preview the camera and sensors while controlling the movement of
               the robot.
-            </p>
-          </div>
-          <div class="project">
-            <h3>Paintball</h3>
-            <p>
-              I was contacted by a local chain of paintball arenas to create a
-              device for a king-of-the-hill style game. I designed and
-              fabricated a total of 5 "checkpoints".
-            </p>
-            <img src="assets/images/koth.png" />
-            <p>
-              An esp32 is the "brain" of each checkpoint and controls 2
-              high-power LEDs through Darilngton transistors. A UPS battery
-              powers the entire system, and the esp32 through a step-down
-              converter. The checkpoints are wirelessly set up before play and
-              measure the duration that each team controls the checkpoint,
-              producing a winner at the end. They are also able to sync with
-              each other through a dedicated NRF24L01+ radio.
             </p>
           </div>
           <div class="project">
@@ -321,15 +330,13 @@
             >
           </h2>
           <h2 class="cv">
-            <a href="/Kaloyan_Dimitrov_CV.pdf">Curriculum Vitae</a>
+            <a href="/Dimitrov_Kaloyan_CV.pdf">Curriculum Vitae</a>
           </h2>
           <h2 class="github">
             <a href="https://github.com/kaloyankdimitrov"
               >kaloyankdimitrov@GitHub</a
             >
           </h2>
-          <h2 class="phone"><a href="tel:+12036767995">(203)-676-7995</a></h2>
-          <h2 class="phone"><a href="tel:+359878822250">+359878822250</a></h2>
         </div>
       </section>
     </main>
