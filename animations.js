@@ -45,7 +45,7 @@ let sections = [
       setTimeoutWithCancel(() => {
         document
           .getElementById("makerportfolio")
-          .classList.add("opacity-animation");
+          ?.classList.add("opacity-animation");
       }, 1100);
     },
     clearAnimation: () => {
@@ -65,7 +65,7 @@ let sections = [
       );
       document
         .getElementById("makerportfolio")
-        .classList.remove("opacity-animation");
+        ?.classList.remove("opacity-animation");
     },
   },
   {
@@ -183,33 +183,52 @@ let update = () => {
   document.body.className = sections[current].id + "-background";
   // show new section and trigger its animations
   const currElement = document.getElementById(sections[current].id);
-  currElement.style.opacity = 100;
+  currElement.style.opacity = 1;
   currElement.style.display = "block";
   setTimeoutWithCancel(sections[current].animation, 500);
   setTimeoutWithCancel(
-    () =>
-      document
-        .getElementById(sections[prev].id)
-        .style.setProperty("--pseudo-opacity", 100),
+    () => currElement.style.setProperty("--pseudo-opacity", 1),
     3000
   );
 
   prev = current;
 };
 
-update();
-
-// activate nav links
-Array.from(document.getElementById("header").children).forEach((link) => {
-  link.addEventListener("click", () => {
-    current = sections.findIndex(
-      (section) => section.id === link.attributes.section.nodeValue
-    );
-    if (current !== prev) {
-      update();
+const navLinks = Array.from(document.querySelectorAll("#header a[href]"));
+const navigateFromHash = () => {
+  const index = sections.findIndex(
+    (section) => `#${section.id}` === window.location.hash
+  );
+  // Empty or unrecognized hashes fall back to Home.
+  current = index === -1 ? 0 : index;
+  if (current === prev) return;
+  update();
+  navLinks.forEach((link) => {
+    if (link.hash === `#${sections[current].id}`) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
     }
   });
+};
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    // Keep modified clicks available for opening links in a new tab.
+    if (event.button !== 0 || event.metaKey || event.ctrlKey ||
+        event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (window.location.hash !== link.hash) {
+      // Update history without the native anchor jump disrupting animations.
+      window.history.pushState(null, "", link.hash);
+    }
+    navigateFromHash();
+  });
 });
+
+window.addEventListener("hashchange", navigateFromHash);
+window.addEventListener("popstate", navigateFromHash);
+navigateFromHash();
 
 // iframes
 const calculateSize = (el) => {
