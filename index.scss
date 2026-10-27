@@ -131,6 +131,8 @@ $fs-xl: 3rem;
 }
 
 html {
+  --header-height: 4rem;
+  scroll-behavior: smooth;
   height: 100%;
   width: 100%;
   .home-background {
@@ -158,9 +160,13 @@ html {
     flex-direction: column;
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
       flex: 0 0 auto;
       transition: background-color 0.5s;
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.25);
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
@@ -198,6 +204,7 @@ html {
             border-bottom: 3px solid white;
             transform: scaleX(0);
           }
+          &[aria-current="location"]::before,
           &:hover::before {
             transform: scaleX(1);
             transition: transform 0.2s;
@@ -213,6 +220,15 @@ html {
       }
     }
 
+    > footer {
+      flex-shrink: 0;
+      padding: 2rem 5% 1rem;
+      text-align: center;
+      font-family: "Hack", monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
     main {
       flex: 1 0 auto;
       display: flex;
@@ -221,24 +237,12 @@ html {
         flex: 1 0 auto;
         flex-direction: column;
         min-width: 0;
-        opacity: 0;
-        display: none;
-        transition: opacity 0.5s;
-        padding: 0 5%;
-        --pseudo-opacity: 0;
-      }
-      section::after {
-        content: "© 2026 Kaloyan Dimitrov";
-        display: block;
-        flex-shrink: 0;
-        margin-top: auto;
-        padding: 2rem 0 1rem;
-        text-align: center;
-        font-family: "Hack", monospace;
-        font-size: 0.75rem;
-        line-height: 1.5;
-        opacity: var(--pseudo-opacity);
-        transition: opacity 0.5s;
+        display: flex;
+        box-sizing: border-box;
+        min-height: calc(100vh - var(--header-height));
+        min-height: calc(100dvh - var(--header-height));
+        scroll-margin-top: var(--header-height);
+        padding: 1rem 5% 0;
       }
 
       #home {
@@ -544,5 +548,35 @@ html {
         }
       }
     }
+  }
+}
+
+// Content remains readable when JavaScript or observer APIs are unavailable.
+html:not(.scroll-animations) main {
+  .name, #profile-img, #home-summary, .qualifications h3,
+  #about-section-title, #projects-section-title, #contact-section-title,
+  #bio-list > *, #contacts-list > *, .project {
+    opacity: 1;
+  }
+}
+html.scroll-animations main .scroll-reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  &.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html body, html body * , html body *::before, html body *::after {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  html.scroll-animations main .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
 }
