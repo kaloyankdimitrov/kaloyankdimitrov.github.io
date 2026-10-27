@@ -101,12 +101,36 @@
               </p>
             </div>
             <div class="project-media">
+              <div class="pchelichka-versions" style="--project-order: 1.5">
+                <figure>
+                  <img src="assets/images/pchelichka_initial.JPG"
+                    alt="Initial version of the PCHELICHKA drone" loading="lazy" />
+                  <figcaption>Initial version</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/images/pchelichka_final.png"
+                    alt="Final version of the PCHELICHKA drone" loading="lazy" />
+                  <figcaption>Final version</figcaption>
+                </figure>
+              </div>
               <iframe
                 style="--project-order: 3"
                 src="https://www.youtube.com/embed/zcQ6GlBiEhE?si=w0sFrW5uowyGdB49"
                 title="PCHELICHKA demo"
                 id="pchelichka-demo"
                 frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <!-- Replace srcdoc with src="VIDEO_EMBED_URL" when the new video is available. -->
+              <iframe
+                style="--project-order: 4.5"
+                id="pchelichka-demo-2"
+                title="PCHELICHKA 2026 Demo"
+                src="https://www.youtube.com/embed/aAfl0CDB4G0?si=5jeRMg6g2DOAMhck"
+                frameborder="0"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
@@ -133,7 +157,17 @@
                 converter. The checkpoints are wirelessly set up before play and
                 measure the duration that each team controls the checkpoint,
                 producing a winner at the end. They are also able to sync with
-                each other through a dedicated NRF24L01+ radio.
+                each other through a dedicated NRF24L01+ radio. The first prototype was assembled on a protoboard.
+              </p>
+              <p style="--project-order: 3">
+                Subsequently, multiple hardware revisions, now manufactured as PCBs, were made with the help of my partner
+                to improve range and reliability. Changes included switching out the transistors for dedicated IC switches,
+                better power converters and much improved radio modules, namely the SX1281. The UI was also incrementally improved based on user feedback.
+              </p>
+              <p style="--project-order: 3">
+                Some of the challenges(and also what taught my most) were dealing with wireless communication reliability and power management
+                while keeping in sync an entire mesh network. I spent days diagnosing range issues and race conditions between the different stations.
+                However, the most important lesson was learning how to communicate with a customer and understand their needs effectively.
               </p>
             </div>
             <div class="project-media">
@@ -144,7 +178,7 @@
               >
                 <!-- Replace the repeated images with additional project photos when available. -->
                 <img
-                  src="assets/images/koth.png"
+                  src="assets/images/koth5.png"
                   alt="Paintball game checkpoint"
                   loading="lazy"
                 />
@@ -154,7 +188,7 @@
                   loading="lazy"
                 />
                 <img
-                  src="assets/images/koth.png"
+                  src="assets/images/koth2.png"
                   alt="Paintball game checkpoint (temporary repeated photo)"
                   loading="lazy"
                 />
@@ -173,6 +207,12 @@
                 A flight controller project for an FPV drone, featuring a custom
                 circuit schematic and PCB layout, developed from scratch by me and a partner.
                 Supports all major firmwares like Betaflight. Has been flight tested successfully.
+              </p>
+              <p style="--project-order: 1">
+                The main challenges of this project were part selection and routing. Most parts commonly used
+                for similar projects were hard to source, but we wanted to utilize as much flight-proven hardware as possible
+                to reduce development risk and ensure reliable flight performance. Component placement and routing were, in turn, difficult
+                due to the size constraints of the board.
               </p>
             </div>
             <div class="project-media">

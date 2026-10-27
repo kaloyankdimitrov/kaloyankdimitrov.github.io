@@ -550,6 +550,28 @@ html {
             }
           }
         }
+        .pchelichka-versions {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1rem;
+          width: 100%;
+          figure { margin: 0; min-width: 0; }
+          img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 0.5rem;
+          }
+          figcaption {
+            padding-top: 0.6rem;
+            text-align: center;
+            font-family: "Hack", monospace;
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+          }
+        }
         .paintball-gallery,
         .flight-controller-gallery {
           display: grid;

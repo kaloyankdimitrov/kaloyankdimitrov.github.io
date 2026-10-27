@@ -15,7 +15,7 @@ jobs:
       - name: Copy files to /public
         run: |
           mkdir public
-          cp -r index.html animations.js Kaloyan_Dimitrov_CV.pdf webfonts assets public
+          cp -r index.html animations.js Dimitrov_Kaloyan_CV.pdf webfonts assets public
       - name: Build Sass
         uses: gha-utilities/sass-build@v0.4.9
         with:
