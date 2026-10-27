@@ -228,15 +228,4 @@ window.addEventListener("hashchange", navigateFromHash);
 window.addEventListener("popstate", navigateFromHash);
 navigateFromHash();
 
-// iframes
-const calculateSize = (el) => {
-  el.width =
-    0.8 *
-    Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  el.height = (315 * el.width) / 560;
-};
-const sizeIframe = () =>
-  Array.from(document.getElementsByTagName("iframe")).forEach(calculateSize);
-sizeIframe();
-
-window.onresize = sizeIframe;
+// Video dimensions follow their responsive CSS columns.

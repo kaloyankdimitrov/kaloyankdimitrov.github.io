@@ -399,6 +399,53 @@ html {
           img {
             max-width: 80%;
           }
+          .project-text,
+          .project-media {
+            display: contents;
+            > * {
+              order: var(--project-order);
+            }
+          }
+          iframe {
+            width: 80vw;
+            height: auto;
+            aspect-ratio: 16 / 9;
+          }
+          @include lg {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: start;
+            gap: clamp(2rem, 4vw, 5rem);
+            width: 100%;
+            margin: 2rem 0 4rem;
+            .project-text,
+            .project-media {
+              display: flex;
+              flex-direction: column;
+              min-width: 0;
+              gap: 1.5rem;
+              > * {
+                order: initial;
+              }
+            }
+            .project-text {
+              h3, p, a {
+                margin: 0;
+                text-align: left;
+                overflow-wrap: anywhere;
+              }
+              p, a {
+                font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+                line-height: 1.7;
+              }
+            }
+            .project-media > img,
+            .project-media > iframe {
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+            }
+          }
         }
         .paintball-gallery {
           display: grid;
