@@ -73,7 +73,7 @@ updateActiveSection();
 // Keep revealed content visible when scrolling back or following a deep link.
 const revealGroups = [
   ["#first-name, #last-name, #profile-img, #home-summary", "opacity-animation"],
-  [".qualifications h3", "opacity-animation"],
+  [".projects-arrow", "opacity-animation"],
   [
     "#about-section-title, #projects-section-title, #contact-section-title",
     "opacity-animation",

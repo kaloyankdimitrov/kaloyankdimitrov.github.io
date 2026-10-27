@@ -246,17 +246,26 @@ html {
       }
 
       #home {
+        .home-hero {
+          @include lg {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            align-items: center;
+            gap: clamp(2rem, 4vw, 5rem);
+            margin: 2rem 0;
+            .home-intro { margin: 0; }
+            .home-intro h1 { font-size: clamp(3rem, 6vw, 8rem); }
+            #home-summary { min-width: 0; }
+          }
+        }
         .home-intro {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 1.5rem;
           margin: 2% 0;
-          @include sm {
-            flex-direction: row;
-            justify-content: flex-start;
-            gap: clamp(1.5rem, 3vw, 3rem);
-          }
+          justify-content: center;
+          text-align: center;
         }
         .home-name {
           min-width: 0;
@@ -266,9 +275,11 @@ html {
         }
         #profile-img {
           flex-shrink: 0;
-          width: clamp(8rem, 22vw, 18rem);
+          width: clamp(7rem, 15vw, 12rem);
           height: auto;
-          object-fit: contain;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          border-radius: 50%;
           opacity: 0;
           transition: opacity 0.5s;
           &.opacity-animation {
@@ -295,12 +306,63 @@ html {
           transition: opacity 0.5s;
           &.opacity-animation { opacity: 1; }
         }
-        .home-links {
+        .projects-arrow {
           display: flex;
-          flex-wrap: wrap;
-          gap: 1rem 2rem;
-          margin: 1.5rem 0;
-          a { color: inherit; text-underline-offset: 0.25em; }
+          flex-direction: column;
+          align-items: center;
+          width: fit-content;
+          margin: 2rem auto 0;
+          padding: 0.5rem 1rem;
+          color: white;
+          text-decoration: none;
+          border-radius: 1rem;
+          .projects-sign {
+            position: relative;
+            padding: 0.75em 1.2em;
+            color: inherit;
+            background: rgba(0, 0, 0, 0.12);
+            border: 1.5px solid currentColor;
+            border-radius: 0.2rem;
+            font-family: "Hack", monospace;
+            font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.25;
+            transform: rotate(-5deg);
+            transform-origin: top center;
+            transition: transform 0.25s ease;
+            &::before, &::after {
+              content: "";
+              position: absolute;
+              top: -0.65rem;
+              width: 1.5px;
+              height: 0.65rem;
+              background: currentColor;
+              border-radius: 1px;
+            }
+            &::before { left: 25%; }
+            &::after { right: 25%; }
+          }
+          .projects-doodle {
+            width: 4.5rem;
+            height: 4rem;
+            margin-top: 0.4rem;
+            stroke: currentColor;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: projects-arrow-bounce 1.8s ease-in-out infinite;
+          }
+          &:hover .projects-sign, &:focus-visible .projects-sign {
+            transform: rotate(4deg) translateY(-2px);
+          }
+          &:focus-visible { outline: 2px dashed currentColor; outline-offset: 4px; }
+          @media (prefers-reduced-motion: reduce) {
+            .projects-doodle { animation: none; }
+            .projects-sign { transition: none; }
+            &:hover .projects-sign, &:focus-visible .projects-sign { transform: rotate(-5deg); }
+          }
         }
         .qualifications {
           margin-top: 1%;
@@ -422,6 +484,16 @@ html {
             gap: clamp(2rem, 4vw, 5rem);
             width: 100%;
             margin: 2rem 0 4rem;
+            &:nth-child(even) {
+              .project-media {
+                grid-column: 1;
+                grid-row: 1;
+              }
+              .project-text {
+                grid-column: 2;
+                grid-row: 1;
+              }
+            }
             .project-text,
             .project-media {
               display: flex;
@@ -608,4 +680,9 @@ html body {
   @media (prefers-reduced-motion: reduce) {
     .pcb-layer { transform: none !important; will-change: auto; }
   }
+}
+
+@keyframes projects-arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.5rem) rotate(5deg); }
 }

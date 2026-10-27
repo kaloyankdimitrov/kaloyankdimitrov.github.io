@@ -23,70 +23,43 @@
     <header>
       <nav id="header">
         <a href="#home">Home</a>
-        <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Get in touch</a>
       </nav>
     </header>
     <main>
       <section id="home" tabindex="-1">
-        <div class="home-intro">
-          <div class="home-name">
-            <h1 id="first-name" class="name">Kaloyan</h1>
-            <h1 id="last-name" class="name">Dimitrov</h1>
+        <div class="home-hero">
+          <div class="home-intro">
+            <img id="profile-img" src="/assets/images/profile.jpg"
+              alt="Portrait of Kaloyan Dimitrov" />
+            <div class="home-name">
+              <h1 id="first-name" class="name">Kaloyan</h1>
+              <h1 id="last-name" class="name">Dimitrov</h1>
+            </div>
+          </div>
+          <div id="home-summary">
+            <ul>
+              <li>
+                Sophomore studying Electrical Engineering at Yale University
+              </li>
+              <li>Building embedded systems and autonomous robots</li>
+              <li>Researching AI in Yale's Computational Method for Curious Robots Lab</li>
+              <li>Developing communications and control systems</li>
+              <li>
+                Working as a lab technician and undergraduate learning
+                assistant(TA)
+              </li>
+            </ul>
           </div>
         </div>
-        <div id="home-summary">
-          <ul>
-            <li>
-              Sophomore studying Electrical Engineering at Yale University
-            </li>
-            <li>Building embedded systems and autonomous robots</li>
-            <li>Researching AI in Yale's Computational Method for Curious Robots Lab</li>
-            <li>Developing communications and control systems</li>
-            <li>
-              Working as a lab technician and undergraduate learning
-              assistant(TA)
-            </li>
-          </ul>
-          <div class="home-links">
-            <a href="#projects">View projects</a>
-            <a href="/Dimitrov_Kaloyan_CV.pdf">View résumé</a>
-          </div>
-        </div>
-        <div class="qualifications">
-          <h3><i class="fa-solid fa-robot"></i>Mechatronics</h3>
-          <h3><i class="fa-solid fa-microchip"></i>Embedded programming</h3>
-          <h3><i class="fa-brands fa-android"></i>Autonomous vehicles</h3>
-          <h3>
-            <i class="fa-solid fa-sliders" aria-hidden="true"></i>Control Theory
-          </h3>
-          <h3><i class="fa-solid fa-satellite" aria-hidden="true"></i>Space</h3>
-          <h3>
-            <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i
-            >Communications
-          </h3>
-        </div>
-      </section>
-      <section id="about" tabindex="-1">
-        <h1 id="about-section-title">About Me</h1>
-        <div class="container">
-          <div id="bio-list">
-            <p>
-              I grew up in Sofia, Bulgaria, where I started informatics at 10,
-              physics at 13, and discovered my love of engineering in
-              high school. Building things gave me a way to bring those
-              interests together. I enjoy the process of turning an idea into something that
-              works, from writing control software to troubleshooting hardware.
-            </p>
-            <p>
-              At Yale, I’m continuing to develop my foundation in electrical
-              engineering while tackling problems, each more challenging than the last. I am
-              beyond excited to be working at the frontier of technology and look fordward to
-              pushing the boundaries of what is possible. 
-            </p>
-          </div>
-        </div>
+        <a class="projects-arrow" href="#projects" aria-label="Scroll to projects">
+          <span class="projects-sign">Projects</span>
+          <svg class="projects-doodle" viewBox="0 0 72 64" fill="none" aria-hidden="true" focusable="false">
+            <path d="M25 5C55 0 61 24 39 28C13 33 17 11 35 19C49 26 40 44 34 55M22 44L34 56L49 44" />
+          </svg>
+        </a>
       </section>
       <section id="projects" tabindex="-1">
         <h1 id="projects-section-title">Projects</h1>
@@ -440,9 +413,32 @@
           </div>
         </div>
       </section>
+      <section id="about" tabindex="-1">
+        <h1 id="about-section-title">About Me</h1>
+        <div class="container">
+          <div id="bio-list">
+            <p>
+              I grew up in Sofia, Bulgaria, where I started informatics at 10,
+              physics at 13, and discovered my love of engineering in
+              high school. Building things gave me a way to bring those
+              interests together. I enjoy the process of turning an idea into something that
+              works, from writing control software to troubleshooting hardware.
+            </p>
+            <p>
+              At Yale, I’m continuing to develop my foundation in electrical
+              engineering while tackling problems, each more challenging than the last. I am
+              beyond excited to be working at the frontier of technology and look fordward to
+              pushing the boundaries of what is possible.
+            </p>
+          </div>
+        </div>
+      </section>
       <section id="contact" tabindex="-1">
-        <h1 id="contact-section-title">Contact</h1>
+        <h1 id="contact-section-title">Get in touch</h1>
         <div id="contacts-list">
+          <h2 class="cv">
+            <a href="/Dimitrov_Kaloyan_CV.pdf">Curriculum Vitae</a>
+          </h2>
           <h2 class="email">
             <a href="mailto:kaloyankd.06@gmail.com">kaloyankd.06@gmail.com</a>
           </h2>
@@ -450,9 +446,6 @@
             <a href="mailto:kaloyan.dimitrov@yale.edu"
               >kaloyan.dimitrov@yale.edu</a
             >
-          </h2>
-          <h2 class="cv">
-            <a href="/Dimitrov_Kaloyan_CV.pdf">Curriculum Vitae</a>
           </h2>
           <h2 class="github">
             <a href="https://github.com/kaloyankdimitrov"
