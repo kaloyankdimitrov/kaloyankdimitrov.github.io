@@ -185,7 +185,11 @@ html {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        align-items: stretch;
         a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           cursor: pointer;
           text-decoration: none;
           color: inherit;
@@ -291,6 +295,12 @@ html {
           @include title-font;
         }
         #home-summary {
+          .resume-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: inherit;
+            text-underline-offset: 0.25em;
+          }
           max-width: 65ch;
           font-family: "Hack", monospace;
           font-size: clamp(1.125rem, 1.8vw, 1.625rem);
@@ -307,12 +317,29 @@ html {
           &.opacity-animation { opacity: 1; }
         }
         .projects-arrow {
+          position: relative;
+          isolation: isolate;
+          cursor: pointer;
+          // A stationary hit surface covers the moving sign and SVG.
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            cursor: pointer;
+          }
+          &, & * {
+            cursor: pointer;
+          }
+          &.scroll-visible {
+            transform: none;
+          }
           display: flex;
           flex-direction: column;
           align-items: center;
           width: fit-content;
           margin: 2rem auto 0;
-          padding: 0.5rem 1rem;
+          padding: 1.25rem 1.5rem;
           color: white;
           text-decoration: none;
           border-radius: 1rem;
