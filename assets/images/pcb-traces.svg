@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Generic PCB artwork: routed buses, IC pads, and plated through vias. -->
+  <defs>
+    <!-- Knock traces out of the drilled holes so vias read as annular pads. -->
+    <mask id="via-holes">
+      <rect width="640" height="640" fill="white" stroke="none" />
+      <circle cx="468" cy="180" r="4.5" fill="black" stroke="none" />
+      <circle cx="500" cy="228" r="4.5" fill="black" stroke="none" />
+      <circle cx="532" cy="276" r="4.5" fill="black" stroke="none" />
+      <circle cx="564" cy="324" r="4.5" fill="black" stroke="none" />
+      <circle cx="420" cy="440" r="4.5" fill="black" stroke="none" />
+      <circle cx="452" cy="488" r="4.5" fill="black" stroke="none" />
+      <circle cx="484" cy="536" r="4.5" fill="black" stroke="none" />
+      <circle cx="516" cy="584" r="4.5" fill="black" stroke="none" />
+    </mask>
+  </defs>
+  <g mask="url(#via-holes)">
+    <g class="traces">
+      <polyline points="172,0 172,172 244,244 260,244" />
+      <polyline points="100,640 100,536 280,356 280,340" />
+      <polyline points="148,0 148,172 244,268 260,268" />
+      <polyline points="124,640 124,536 304,356 304,340" />
+      <polyline points="124,0 124,172 244,292 260,292" />
+      <polyline points="148,640 148,536 328,356 328,340" />
+      <polyline points="100,0 100,172 244,316 260,316" />
+      <polyline points="172,640 172,536 352,356 352,340" />
+      <polyline points="380,244 404,244 468,180" />
+      <polyline points="380,268 460,268 500,228" />
+      <polyline points="380,292 516,292 532,276" />
+      <polyline points="380,316 556,316 564,324" />
+      <polyline points="560,400 560,400 520,440 420,440" />
+      <polyline points="576,400 576,448 536,488 452,488" />
+      <polyline points="592,400 592,496 552,536 484,536" />
+      <polyline points="608,400 608,544 568,584 516,584" />
+    </g>
+    <!-- IC outline, pin-one indicator, and copper landing pads. -->
+    <rect x="260" y="220" width="120" height="120" rx="5" stroke-width="1.2" />
+    <circle cx="274" cy="232" r="3" fill="#fff" stroke="none" />
+    <g class="pads" fill="#fff" stroke="none">
+      <rect x="246" y="241" width="14" height="6" rx="1" />
+      <rect x="380" y="241" width="14" height="6" rx="1" />
+      <rect x="277" y="340" width="6" height="16" rx="1" />
+      <rect x="557" y="384" width="6" height="16" rx="1" />
+      <rect x="246" y="265" width="14" height="6" rx="1" />
+      <rect x="380" y="265" width="14" height="6" rx="1" />
+      <rect x="301" y="340" width="6" height="16" rx="1" />
+      <rect x="573" y="384" width="6" height="16" rx="1" />
+      <rect x="246" y="289" width="14" height="6" rx="1" />
+      <rect x="380" y="289" width="14" height="6" rx="1" />
+      <rect x="325" y="340" width="6" height="16" rx="1" />
+      <rect x="589" y="384" width="6" height="16" rx="1" />
+      <rect x="246" y="313" width="14" height="6" rx="1" />
+      <rect x="380" y="313" width="14" height="6" rx="1" />
+      <rect x="349" y="340" width="6" height="16" rx="1" />
+      <rect x="605" y="384" width="6" height="16" rx="1" />
+    </g>
+    <rect x="550" y="364" width="68" height="20" rx="3" stroke-width="1.2" />
+    <g class="vias" stroke-width="3">
+      <circle cx="468" cy="180" r="6" />
+      <circle cx="500" cy="228" r="6" />
+      <circle cx="532" cy="276" r="6" />
+      <circle cx="564" cy="324" r="6" />
+      <circle cx="420" cy="440" r="6" />
+      <circle cx="452" cy="488" r="6" />
+      <circle cx="484" cy="536" r="6" />
+      <circle cx="516" cy="584" r="6" />
+    </g>
+    <g font-family="monospace" font-size="10" fill="#fff" stroke="none" opacity="0.8">
+      <text x="306" y="285">U1</text>
+      <text x="566" y="356">J1</text>
+    </g>
+  </g>
+</svg>

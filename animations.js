@@ -3,6 +3,15 @@ const sections = Array.from(document.querySelectorAll("main > section"));
 const navLinks = Array.from(document.querySelectorAll("#header a[href]"));
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+// PCB artwork moves only in response to scrolling.
+const pcbLayer = document.querySelector(".pcb-layer");
+const updateBackdrop = () => {
+  const scroll = reducedMotion.matches ? 0 : Math.max(0, window.scrollY);
+  // A full tile wraps seamlessly, keeping transforms bounded on long pages.
+  pcbLayer.style.transform = `translate3d(0, -${(scroll * 0.12) % 640}px, 0)`;
+};
+reducedMotion.addEventListener("change", updateBackdrop);
+
 // Keep anchor targets below the sticky header at every screen size.
 const sizeHeader = () => {
   document.documentElement.style.setProperty(
@@ -30,6 +39,7 @@ let activeSection;
 let scrollFrame;
 const updateActiveSection = () => {
   scrollFrame = null;
+  updateBackdrop();
   const headerHeight = header.getBoundingClientRect().height;
   const activationLine =
     headerHeight + (window.innerHeight - headerHeight) * 0.3;

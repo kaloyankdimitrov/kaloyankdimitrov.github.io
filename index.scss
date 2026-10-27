@@ -580,3 +580,32 @@ html.scroll-animations main .scroll-reveal {
     transform: none;
   }
 }
+
+// Decorative PCB traces stay behind content and never capture pointer input.
+html body {
+  isolation: isolate;
+  > main, > footer { position: relative; z-index: 1; }
+}
+.scroll-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  .pcb-layer {
+    position: absolute;
+    inset: -640px 0;
+    background: url("assets/images/pcb-traces.svg") repeat;
+    background-size: 640px 640px;
+    opacity: 0.32;
+    mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.4) 28%, rgba(0, 0, 0, 0.4) 72%, #000);
+    will-change: transform;
+  }
+  @media (max-width: 575px) {
+    .pcb-layer { opacity: 0.22; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pcb-layer { transform: none !important; will-change: auto; }
+  }
+}
