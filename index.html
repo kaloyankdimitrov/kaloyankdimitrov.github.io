@@ -69,6 +69,27 @@
         <div id="projects-list">
           <div class="project">
             <div class="project-text">
+              <h3 style="--project-order: 0">CubeSat</h3>
+              <p style="--project-order: 1">
+                I am building a CubeSat with a team of students at Yale. I am responsible for the design and implementation of the communications and control
+                systems. The mission is to demonstrate an extendable gravity gradient boom(GGB) for nadir pointing. The GGB is fully custom and developed by the team(PCB, mechanical, firmware).
+                I have developed the full firmware and an automated test bench for validation. This includes a full simulation environment, capable of projecting the entire mission duration both
+                with SITL(Software in the Loop) and HIL(Hardware in the Loop) testing. Power budget and mock sensor data generation are included. 
+                I have also developed the communications pipeline for the ground station to reeive telemetry and uplink commands. 
+              </p>
+              <p style="--project-order: 3">
+                The CubeSat will be deployed from the ISS in Fall of 2027 and we expect to establish first contact shortly after.
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="cubesat-gallery" style="--project-order: 2" aria-label="CubeSat project gallery">
+                <img src="assets/images/cubesat1.png" alt="CubeSat project photo 1" loading="lazy" />
+                <img src="assets/images/cubesat2.png" alt="CubeSat project photo 2" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
               <h3 style="--project-order: 0">PCHELICHKA</h3>
               <p style="--project-order: 2">
                 PCHELICHKA is an autonomous drone-bee, built as a continuation
@@ -148,24 +169,43 @@
             <div class="project-text">
               <h3 style="--project-order: 0">BDR</h3>
               <p style="--project-order: 1">
-                More details about BDR, including the project goals, my contributions,
-                and the design and testing process, are coming soon.
+                Bulldogs Racing(BDR) is Yale's Formula Student team, which I joined my freshman year. I quickly became the software lead and was 
+                responsible for all software on the car(and some hardware too). From late nights in the lab for hardware bring-up, to on-track problem resolution, I was involved in the full development cycle of the car or at least of its electrical and software systems.
+              </p>
+              <p style="--project-order: 1">
+                My first task was to design and program a PCB to monitor all 84 battery cells. Due to the high currents involved, I had to resolve multiple issues(EMI, ground charge depletion, etc.)
+                that prevented reliable measurement. Due to the stringent timelines, I had to get creative with software filters and hardware makeshift solutions, but ultiamtely the car ran at competition,
+                securing 6th place.
+              </p>
+              <p style="--project-order: 1">
+                I developed a complete telemetry system using the Mravka radios(the next project described below) that collected all car data and sent it to a dashboard for real-time monitoring.
+                This proved essential to solve a number of issues that surfaced on track days, and I was able to diagnose and fix them in real-time. 
               </p>
             </div>
             <div class="project-media">
               <div class="bdr-gallery" style="--project-order: 2" aria-label="BDR project gallery">
                 <img src="assets/images/bdr1.JPG" alt="BDR project photo 1" loading="lazy" />
                 <img src="assets/images/bdr2.JPG" alt="BDR project photo 2" loading="lazy" />
-                <div class="photo-placeholder">Photo 3 coming soon</div>
-                <div class="photo-placeholder">Photo 4 coming soon</div>
-                <div class="photo-placeholder">Photo 5 coming soon</div>
-                <div class="photo-placeholder">Photo 6 coming soon</div>
+                <div class="bdr-video-row">
+                  <iframe
+                    class="bdr-video"
+                    src="https://www.youtube.com/embed/oSEs4s-ht80"
+                    title="Bulldogs Racing (BDR) video"
+                    frameborder="0"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <img src="assets/images/bdr3.png" alt="BDR project photo 3" loading="lazy" />
+                <img src="assets/images/bdr4.png" alt="BDR project photo 4" loading="lazy" />
               </div>
             </div>
           </div>
           <div class="project">
             <div class="project-text">
-              <h3 style="--project-order: 0">Mravka</h3>
+              <h3 style="--project-order: 0">Mravka(Ant)</h3>
               <p style="--project-order: 1">
                 I was contracted by a local chain of paintball arenas to create a
                 device for a king-of-the-hill style game. I designed and

@@ -560,6 +560,27 @@ html {
             }
           }
         }
+        .project .bdr-gallery {
+          .bdr-video-row {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background: transparent;
+          }
+          iframe.bdr-video {
+            display: block;
+            width: 100%;
+            max-width: 24rem;
+            height: auto;
+            aspect-ratio: 9 / 16;
+            border: 0;
+            outline: 1.5px solid rgba(255, 255, 255, 0.75);
+            outline-offset: 4px;
+            border-radius: 0.5rem;
+            background: transparent;
+          }
+        }
         .pchelichka-versions {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -583,6 +604,7 @@ html {
           }
         }
         .paintball-gallery,
+        .cubesat-gallery,
         .bdr-gallery,
         .sturshel-gallery,
         .flight-controller-gallery {
@@ -600,6 +622,9 @@ html {
             background: rgba(0, 0, 0, 0.12);
             border-radius: 0.5rem;
           }
+        }
+        .cubesat-gallery {
+          grid-template-columns: minmax(0, 1fr);
         }
         .paintball-gallery {
           grid-template-columns: minmax(0, 1fr);
