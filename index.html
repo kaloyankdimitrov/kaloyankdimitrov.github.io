@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kaloyan Dimitrov</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link rel="stylesheet" href="index.css?v=20261027-sign-hit-area" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="scroll-backdrop" aria-hidden="true">
+      <div class="pcb-layer"></div>
+    </div>
+    <header>
+      <nav id="header">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Get in touch</a>
+      </nav>
+    </header>
+    <main>
+      <section id="home" tabindex="-1">
+        <div class="home-hero">
+          <div class="home-intro">
+            <img id="profile-img" src="/assets/images/profile.jpg"
+              alt="Portrait of Kaloyan Dimitrov" />
+            <div class="home-name">
+              <h1 id="first-name" class="name">Kaloyan</h1>
+              <h1 id="last-name" class="name">Dimitrov</h1>
+            </div>
+          </div>
+          <a class="projects-arrow" href="#projects" aria-label="Scroll to projects">
+            <span class="projects-sign">Projects</span>
+            <svg class="projects-doodle" viewBox="0 0 72 64" fill="none" aria-hidden="true" focusable="false">
+              <path d="M25 5C55 0 61 24 39 28C13 33 17 11 35 19C49 26 40 44 34 55M22 44L34 56L49 44" />
+            </svg>
+          </a>
+          <div id="home-summary">
+            <ul>
+              <li>
+                Sophomore studying Electrical Engineering at Yale University
+              </li>
+              <li>Building embedded systems and autonomous robots</li>
+              <li>Researching AI in Yale's Computational Method for Curious Robots Lab</li>
+              <li>Developing communications and control systems</li>
+              <li>
+                Working as a lab technician and undergraduate learning
+                assistant(TA)
+              </li>
+              <li>
+                <a class="resume-link" href="/Dimitrov_Kaloyan_CV.pdf" download>View résumé</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="projects" tabindex="-1">
+        <h1 id="projects-section-title">Projects</h1>
+        <div id="projects-list">
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">CubeSat</h3>
+              <p style="--project-order: 1">
+                I am building a CubeSat with a team of students at Yale. I am responsible for the design and implementation of the communications and control
+                systems. The mission is to demonstrate an extendable gravity gradient boom(GGB) for nadir pointing. The GGB is fully custom and developed by the team(PCB, mechanical, firmware).
+                I have developed the full firmware and an automated test bench for validation. This includes a full simulation environment, capable of projecting the entire mission duration both
+                with SITL(Software in the Loop) and HIL(Hardware in the Loop) testing. Power budget and mock sensor data generation are included. 
+                I have also developed the communications pipeline for the ground station to reeive telemetry and uplink commands. 
+              </p>
+              <p style="--project-order: 3">
+                The CubeSat will be deployed from the ISS in Fall of 2027 and we expect to establish first contact shortly after.
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="cubesat-gallery" style="--project-order: 2" aria-label="CubeSat project gallery">
+                <img src="assets/images/cubesat1.png" alt="CubeSat project photo 1" loading="lazy" />
+                <img src="assets/images/cubesat2.png" alt="CubeSat project photo 2" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">PCHELICHKA</h3>
+              <p style="--project-order: 2">
+                PCHELICHKA is an autonomous drone-bee, built as a continuation
+                of my research. I came up with an innovative end effector for
+                pollination without damaging the plant, and designed and tuned
+                the control strategy, while my partner provided the hardware.
+              </p>
+              <p style="--project-order: 4">
+                The first video is the first fully autonomous flight(very dear to my heart)
+                in my living room with no safety precautions, and a lot of trust
+                in the control system. The second video is a more recent flight with the new hardware.
+                I spent countless hours tuning the control system and optimizing the video transmission for precise operation.
+              </p>
+              <p style="--project-order: 8">
+                The drone uses only its camera feed, received over a digital
+                wireless link, and inertial measurement unit for navigation and
+                stabilization. The drone hardware is thus affordable without any high performance chips
+                for video processing, which is offloaded to a separate processing unit(or just my laptop usually).
+                The motors are controlled with a cascading PID controller from position to velocity to acceleration to pitch,
+                roll, and yaw rate commands, which are then sent to the drone
+                through the FPV radio.
+                <b
+                  >The drone is entirely autonomous form lift-off to landing.</b
+                >
+              </p>
+              <p style="--project-order: 12">
+                I also built a dashboard for management of the system. It
+                allows for easy setup of the drone and an interface to the AI I
+                trained. The computer vision model takes images from the camera
+                feed and looks for signs of diseases on the plants to alert the
+                user of threats to yield.
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="pchelichka-versions" style="--project-order: 3">
+                <figure>
+                  <img src="assets/images/pchelichka_initial.JPG"
+                    alt="Initial version of the PCHELICHKA drone" loading="lazy" />
+                  <figcaption>Initial version</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/images/pchelichka_final.png"
+                    alt="Final version of the PCHELICHKA drone" loading="lazy" />
+                  <figcaption>Final version</figcaption>
+                </figure>
+              </div>
+              <iframe
+                style="--project-order: 6"
+                src="https://www.youtube.com/embed/zcQ6GlBiEhE?si=w0sFrW5uowyGdB49"
+                title="PCHELICHKA demo"
+                id="pchelichka-demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <!-- Replace srcdoc with src="VIDEO_EMBED_URL" when the new video is available. -->
+              <iframe
+                style="--project-order: 9"
+                id="pchelichka-demo-2"
+                title="PCHELICHKA 2026 Demo"
+                src="https://www.youtube.com/embed/aAfl0CDB4G0?si=5jeRMg6g2DOAMhck"
+                frameborder="0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <img
+                style="--project-order: 10"
+                src="assets/images/pchelichkaconfig.png"
+                alt="Pchelichka dashboard user interface"
+              />
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">BDR</h3>
+              <p style="--project-order: 1">
+                Bulldogs Racing(BDR) is Yale's Formula Student team, which I joined my freshman year. I quickly became the software lead and was 
+                responsible for all software on the car(and some hardware too). From late nights in the lab for hardware bring-up, to on-track problem resolution, I was involved in the full development cycle of the car or at least of its electrical and software systems.
+              </p>
+              <p style="--project-order: 1">
+                My first task was to design and program a PCB to monitor all 84 battery cells. Due to the high currents involved, I had to resolve multiple issues(EMI, ground charge depletion, etc.)
+                that prevented reliable measurement. Due to the stringent timelines, I had to get creative with software filters and hardware makeshift solutions, but ultiamtely the car ran at competition,
+                securing 6th place.
+              </p>
+              <p style="--project-order: 1">
+                I developed a complete telemetry system using the Mravka radios(the next project described below) that collected all car data and sent it to a dashboard for real-time monitoring.
+                This proved essential to solve a number of issues that surfaced on track days, and I was able to diagnose and fix them in real-time. 
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="bdr-gallery" style="--project-order: 2" aria-label="BDR project gallery">
+                <img src="assets/images/bdr1.JPG" alt="BDR project photo 1" loading="lazy" />
+                <img src="assets/images/bdr2.JPG" alt="BDR project photo 2" loading="lazy" />
+                <div class="bdr-video-row">
+                  <iframe
+                    class="bdr-video"
+                    src="https://www.youtube.com/embed/oSEs4s-ht80"
+                    title="Bulldogs Racing (BDR) video"
+                    frameborder="0"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <img src="assets/images/bdr3.png" alt="BDR project photo 3" loading="lazy" />
+                <img src="assets/images/bdr4.png" alt="BDR project photo 4" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">Mravka(Ant)</h3>
+              <p style="--project-order: 1">
+                I was contracted by a local chain of paintball arenas to create a
+                device for a king-of-the-hill style game. I designed and
+                fabricated a total of 5 "checkpoints".
+              </p>
+              <p style="--project-order: 3">
+                An esp32 is the "brain" of each checkpoint and controls 2
+                high-power LEDs through Darilngton transistors. A UPS battery
+                powers the entire system, and the esp32 through a step-down
+                converter. The checkpoints are wirelessly set up before play and
+                measure the duration that each team controls the checkpoint,
+                producing a winner at the end. They are also able to sync with
+                each other through a dedicated NRF24L01+ radio. The first prototype was assembled on a protoboard.
+              </p>
+              <p style="--project-order: 3">
+                Subsequently, multiple hardware revisions, now manufactured as PCBs, were made with the help of my partner
+                to improve range and reliability. Changes included switching out the transistors for dedicated IC switches,
+                better power converters and much improved radio modules, namely the SX1281. The UI was also incrementally improved based on user feedback.
+              </p>
+              <p style="--project-order: 3">
+                Some of the challenges(and also what taught my most) were dealing with wireless communication reliability and power management
+                while keeping in sync an entire mesh network. I spent days diagnosing range issues and race conditions between the different stations.
+                However, the most important lesson was learning how to communicate with a customer and understand their needs effectively.
+              </p>
+            </div>
+            <div class="project-media">
+              <div
+                style="--project-order: 2"
+                class="paintball-gallery"
+                aria-label="Paintball checkpoint gallery"
+              >
+                <img
+                  src="assets/images/koth5.JPG"
+                  alt="Paintball game checkpoint"
+                  loading="lazy"
+                />
+                <div class="paintball-designs">
+                  <img
+                    src="assets/images/mravka_schem.png"
+                    alt="Paintball checkpoint circuit schematic"
+                    loading="lazy"
+                  />
+                  <img
+                    src="assets/images/mravka_layout.png"
+                    alt="Paintball checkpoint PCB layout"
+                    loading="lazy"
+                  />
+                </div>
+                <img
+                  src="assets/images/koth2.JPG"
+                  alt="Paintball game checkpoint (temporary repeated photo)"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">FPV Drone Flight Controller</h3>
+              <p style="--project-order: 1">
+                A flight controller project for an FPV drone, featuring a custom
+                circuit schematic and PCB layout, developed from scratch by me and a partner.
+                Supports all major firmwares like Betaflight. Has been flight tested successfully.
+              </p>
+              <p style="--project-order: 1">
+                The main challenges of this project were part selection and routing. Most parts commonly used
+                for similar projects were hard to source, but we wanted to utilize as much flight-proven hardware as possible
+                to reduce development risk and ensure reliable flight performance. Component placement and routing were, in turn, difficult
+                due to the size constraints of the board.
+              </p>
+            </div>
+            <div class="project-media">
+              <div style="--project-order: 2" class="flight-controller-gallery"
+                aria-label="FPV drone flight controller design gallery">
+                <img class="schematic" src="assets/images/fcv2_schem.png"
+                  alt="FPV drone flight controller circuit schematic" loading="lazy" />
+                <img src="assets/images/fcv2.png"
+                  alt="FPV drone flight controller board" loading="lazy" />
+                <img src="assets/images/fcv2_layout.png"
+                  alt="FPV drone flight controller PCB layout" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">Sturshel</h3>
+              <p style="--project-order: 1">
+                Sturshel is a long-range Y-4 drone I built with a partner, featuring a fully original design. 
+                The shell was generatively designed and optimized for weight and crash resistance.
+                The carbon frame was fully designed and manufactured by us, and the flight controller is
+                our very own you can see above.
+              </p>
+              <p style="--project-order: 1">
+                We had one distinct design goal for this drone, namely to not have the propellers in frame of the camera. 
+                This was achieved by using a Y-4 configuration, which is a quadcopter with two motors on the front and two on the back,
+                even though we had started out with a traditional quadcopter design(last image).
+              </p>
+              <p style="--project-order: 1">
+                The main challenges of this project were balancing strength and weight of all components,
+                but it was particularly educational as we went through the entire design and manufacturing process.
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="sturshel-gallery" style="--project-order: 2" aria-label="Sturshel project gallery">
+                <img src="assets/images/sturshel1.JPG" alt="Sturshel project photo 1" loading="lazy" />
+                <img src="assets/images/sturshel2.png" alt="Sturshel project photo 2" loading="lazy" />
+                <img src="assets/images/sturshel3.png" alt="Sturshel project photo 3" loading="lazy" />
+                <img src="assets/images/sturshel4.png" alt="Sturshel project photo 4" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">
+                Swarm Guidance and Communication System
+              </h3>
+              <p style="--project-order: 1">
+                My high school research involved proposing an algorithm for the
+                coordination of robotic swarms with no central control and
+                limited communication range. I further built a simulation
+                environment for its evaluation and compared its effectiveness to
+                other approaches with similar constraints.
+              </p>
+              <a
+                style="--project-order: 3"
+                href="https://www.mdpi.com/2227-9717/12/10/2122"
+                >https://www.mdpi.com/2227-9717/12/10/2122</a
+              >
+            </div>
+            <div class="project-media">
+              <img
+                style="--project-order: 2"
+                src="assets/images/sgcsarticle.png"
+                alt="Pchelichka dashboard user interface"
+              />
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">FIRST Robotics Competition</h3>
+              <p style="--project-order: 1">
+                I am a co-founder of the only Bulgarian FRC team
+                <b>ACS Phoenix #9089</b>. We have been participating in the
+                competition since the 2023 season, and I captained the team
+                during the 2024 and 2025 seasons.
+              </p>
+              <p style="--project-order: 3">
+                For the 2025 season, I grew the team to over 30 people with a
+                $10,000 budget, and we secured a playoff spot for the first
+                time. On top of my organizational duties as captain, I took the
+                lead on developing the elevator, arm, and intake mechanisms, as
+                well as programming and autonomous routines.
+              </p>
+              <p style="--project-order: 5">
+                In 2024, I took over as captain and we became 25/51, compared to
+                48/49 in 2023. I led our fundraising efforts, nearly tripling
+                the team&apos;s budget from the previous year, while also
+                developing the software and the intake mechanism.
+              </p>
+              <p style="--project-order: 7">
+                Our inaugural season was an emotional rollercoaster, so I was
+                mainly performing hardware troubleshooting and scrapping
+                together last-minute software.
+              </p>
+            </div>
+            <div class="project-media">
+              <iframe
+                style="--project-order: 2"
+                src="https://www.youtube.com/embed/lRCqs9KQ2Lk?si=rAub_DZSjQPcS0El"
+                title="FRC 2025"
+                id="frc2025"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <iframe
+                style="--project-order: 4"
+                src="https://www.youtube.com/embed/gQ9tPryZoZI?si=Njk58mPafG8NIs31"
+                title="FRC 2024"
+                id="frc2024"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <iframe
+                style="--project-order: 6"
+                src="https://youtube.com/embed/BbsdK7UAn3s"
+                title="FRC 2023"
+                id="frc2023"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">SHARO</h3>
+              <p style="--project-order: 2">
+                SHARO is a robot dog I built again with a partner. I was mainly
+                responsible for the software of the robot, which was built from
+                scratch(pre-AI too). I came up with a novel way to define the
+                motion of its limbs with Bézier curves.
+              </p>
+              <p style="--project-order: 4">
+                I also integrated computer vision models for facial detection
+                and emotion classification, which made it particularly engaging
+                for kids at various events. To fit all the code on a Raspberry
+                Pi 4, I optimized the code with multiprocessing and moved the
+                inverse kinematics calculations to Rust.
+              </p>
+              <p style="--project-order: 6">
+                This control panel(desktop and mobile app available) is used to
+                preview the camera and sensors while controlling the movement of
+                the robot.
+              </p>
+            </div>
+            <div class="project-media">
+              <iframe
+                style="--project-order: 1"
+                src="https://youtube.com/embed/3D01beR75bE"
+                title="SHARO Dog"
+                id="sharowalk"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <iframe
+                style="--project-order: 3"
+                src="https://www.youtube.com/embed/NTSvQLtCWRg?si=OH0kWpYkZHxUvKOV"
+                title="Bézier curves"
+                id="bezier"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <img
+                style="--project-order: 5"
+                src="assets/images/sharogui.png"
+              />
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">SpaceChallenges</h3>
+              <p style="--project-order: 1">
+                I attended a 5-week-long summer bootcamp where along with a
+                rigorous academic program, consisting of daily lectures and
+                weekly survival quizzes, we were separated into teams with the
+                task of building ground stations to communicate with a real
+                satellite.
+              </p>
+              <p style="--project-order: 3">
+                I was the team captain and mainly focused on the electroncis and
+                software. Along with control of the station, I also built a
+                satellite tracker with Rust that automatically started the
+                station when a satellite pass is occuring. In the end, we were
+                awarded for best project documentation and I was among the few
+                to successfully graduate the bootcamp.
+              </p>
+            </div>
+            <div class="project-media">
+              <iframe
+                style="--project-order: 2"
+                src="https://www.youtube.com/embed/jVWVmJUlkUs?si=9bSfj7R6AbvsYu7X"
+                title="Space Challenges prototype demo"
+                id="space-challenges-demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">LocusLibri</h3>
+              <p style="--project-order: 1">
+                LocusLibri is a social media for bookworms. It lets users keep a
+                reading list of books they enjoy and matches users based on
+                their reading preferences.
+              </p>
+              <p style="--project-order: 3">
+                I made the entire web platform myself, back-end to front-end and
+                marketing materials.
+              </p>
+            </div>
+            <div class="project-media">
+              <img
+                style="--project-order: 2"
+                src="assets/images/locuslibri.png"
+              />
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">ParoleMemo</h3>
+              <p style="--project-order: 1">
+                ParoleMemo is a digital dictionary-notebook to assisst learners
+                with vocabulary.
+              </p>
+              <p style="--project-order: 3">
+                I built the app entirely by myself with React, MongoDB, and
+                Golang.
+              </p>
+            </div>
+            <div class="project-media">
+              <img
+                style="--project-order: 2"
+                src="assets/images/parolememo.png"
+              />
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">Fortamentum</h3>
+              <p style="--project-order: 1">
+                I was a part of a 3-person team that participated in the NSS
+                Space Settlement Contest. We produced a 50-page proposal for a
+                space station as a future human habitat, complete with
+                engineering design, governance strucutre, and economical
+                analysis. I personally came up and documented the financial
+                services offered, governance hierarchy, power supply,
+                communications, transport ships, port, and storage.
+              </p>
+            </div>
+            <div class="project-media">
+              <img
+                style="--project-order: 2"
+                src="assets/images/FortamentumCover.png"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" tabindex="-1">
+        <h1 id="about-section-title">About Me</h1>
+        <div class="container">
+          <div id="bio-list">
+            <p>
+              I grew up in Sofia, Bulgaria, where I started informatics at 10,
+              physics at 13, and discovered my love of engineering in
+              high school. Building things gave me a way to bring those
+              interests together. I enjoy the process of turning an idea into something that
+              works, from writing control software to troubleshooting hardware.
+            </p>
+            <p>
+              At Yale, I’m continuing to develop my foundation in electrical
+              engineering while tackling problems, each more challenging than the last. I am
+              beyond excited to be working at the frontier of technology and look fordward to
+              pushing the boundaries of what is possible.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" tabindex="-1">
+        <h1 id="contact-section-title">Get in touch</h1>
+        <div id="contacts-list">
+          <h2 class="cv">
+            <a href="/Dimitrov_Kaloyan_CV.pdf">Curriculum Vitae</a>
+          </h2>
+          <h2 class="email">
+            <a href="mailto:kaloyankd.06@gmail.com">kaloyankd.06@gmail.com</a>
+          </h2>
+          <h2 class="email">
+            <a href="mailto:kaloyan.dimitrov@yale.edu"
+              >kaloyan.dimitrov@yale.edu</a
+            >
+          </h2>
+          <h2 class="github">
+            <a href="https://github.com/kaloyankdimitrov"
+              >kaloyankdimitrov@GitHub</a
+            >
+          </h2>
+        </div>
+      </section>
+    </main>
+    <footer>© 2026 Kaloyan Dimitrov</footer>
+  </body>
+  <script src="animations.js"></script>
+</html>
