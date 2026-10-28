@@ -255,11 +255,17 @@ html {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
             align-items: center;
-            gap: clamp(2rem, 4vw, 5rem);
+            column-gap: clamp(2rem, 4vw, 5rem);
+            row-gap: 0.5rem;
             margin: 2rem 0;
-            .home-intro { margin: 0; }
+            .home-intro { margin: 0; grid-column: 1; grid-row: 1; }
             .home-intro h1 { font-size: clamp(3rem, 6vw, 8rem); }
-            #home-summary { min-width: 0; }
+            #home-summary { min-width: 0; grid-column: 2; grid-row: 1; }
+            .projects-arrow {
+              grid-column: 1 / -1;
+              grid-row: 2;
+              margin-top: 0;
+            }
           }
         }
         .home-intro {
@@ -305,6 +311,10 @@ html {
           font-family: "Hack", monospace;
           font-size: clamp(1.125rem, 1.8vw, 1.625rem);
           line-height: 1.7;
+          @media (max-width: 575px) {
+            font-size: 0.95rem;
+            line-height: 1.6;
+          }
           ul {
             margin: 1rem 0;
             padding-left: 1.4em;
@@ -573,6 +583,8 @@ html {
           }
         }
         .paintball-gallery,
+        .bdr-gallery,
+        .sturshel-gallery,
         .flight-controller-gallery {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -588,6 +600,27 @@ html {
             background: rgba(0, 0, 0, 0.12);
             border-radius: 0.5rem;
           }
+        }
+        .paintball-gallery {
+          grid-template-columns: minmax(0, 1fr);
+          .paintball-designs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(0.5rem, 2vw, 1.5rem);
+          }
+        }
+        .photo-placeholder {
+          display: grid;
+          place-items: center;
+          box-sizing: border-box;
+          aspect-ratio: 4 / 3;
+          padding: 0.75rem;
+          border: 1px dashed rgba(255, 255, 255, 0.45);
+          border-radius: 0.5rem;
+          background: rgba(0, 0, 0, 0.12);
+          font-family: "Hack", monospace;
+          font-size: clamp(0.75rem, 1.2vw, 1rem);
+          text-align: center;
         }
         .flight-controller-gallery .schematic {
           grid-column: 1 / -1;

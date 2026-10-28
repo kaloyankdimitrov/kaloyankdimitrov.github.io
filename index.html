@@ -39,6 +39,12 @@
               <h1 id="last-name" class="name">Dimitrov</h1>
             </div>
           </div>
+          <a class="projects-arrow" href="#projects" aria-label="Scroll to projects">
+            <span class="projects-sign">Projects</span>
+            <svg class="projects-doodle" viewBox="0 0 72 64" fill="none" aria-hidden="true" focusable="false">
+              <path d="M25 5C55 0 61 24 39 28C13 33 17 11 35 19C49 26 40 44 34 55M22 44L34 56L49 44" />
+            </svg>
+          </a>
           <div id="home-summary">
             <ul>
               <li>
@@ -57,12 +63,6 @@
             </ul>
           </div>
         </div>
-        <a class="projects-arrow" href="#projects" aria-label="Scroll to projects">
-          <span class="projects-sign">Projects</span>
-          <svg class="projects-doodle" viewBox="0 0 72 64" fill="none" aria-hidden="true" focusable="false">
-            <path d="M25 5C55 0 61 24 39 28C13 33 17 11 35 19C49 26 40 44 34 55M22 44L34 56L49 44" />
-          </svg>
-        </a>
       </section>
       <section id="projects" tabindex="-1">
         <h1 id="projects-section-title">Projects</h1>
@@ -70,30 +70,32 @@
           <div class="project">
             <div class="project-text">
               <h3 style="--project-order: 0">PCHELICHKA</h3>
-              <p style="--project-order: 1">
+              <p style="--project-order: 2">
                 PCHELICHKA is an autonomous drone-bee, built as a continuation
                 of my research. I came up with an innovative end effector for
                 pollination without damaging the plant, and designed and tuned
                 the control strategy, while my partner provided the hardware.
               </p>
-              <p style="--project-order: 2">
-                This is the first fully autonomous flight(very dear to my heart)
-                in my living room with no safety precautions, and a lot of trust
-                in the control system:
-              </p>
               <p style="--project-order: 4">
+                The first video is the first fully autonomous flight(very dear to my heart)
+                in my living room with no safety precautions, and a lot of trust
+                in the control system. The second video is a more recent flight with the new hardware.
+                I spent countless hours tuning the control system and optimizing the video transmission for precise operation.
+              </p>
+              <p style="--project-order: 8">
                 The drone uses only its camera feed, received over a digital
                 wireless link, and inertial measurement unit for navigation and
-                stabilization. The motors are controlled with a cascading PID
-                controller from position to velocity to acceleration to pitch,
+                stabilization. The drone hardware is thus affordable without any high performance chips
+                for video processing, which is offloaded to a separate processing unit(or just my laptop usually).
+                The motors are controlled with a cascading PID controller from position to velocity to acceleration to pitch,
                 roll, and yaw rate commands, which are then sent to the drone
                 through the FPV radio.
                 <b
                   >The drone is entirely autonomous form lift-off to landing.</b
                 >
               </p>
-              <p style="--project-order: 6">
-                I also built this dashboard for management of the system. It
+              <p style="--project-order: 12">
+                I also built a dashboard for management of the system. It
                 allows for easy setup of the drone and an interface to the AI I
                 trained. The computer vision model takes images from the camera
                 feed and looks for signs of diseases on the plants to alert the
@@ -101,7 +103,7 @@
               </p>
             </div>
             <div class="project-media">
-              <div class="pchelichka-versions" style="--project-order: 1.5">
+              <div class="pchelichka-versions" style="--project-order: 3">
                 <figure>
                   <img src="assets/images/pchelichka_initial.JPG"
                     alt="Initial version of the PCHELICHKA drone" loading="lazy" />
@@ -114,7 +116,7 @@
                 </figure>
               </div>
               <iframe
-                style="--project-order: 3"
+                style="--project-order: 6"
                 src="https://www.youtube.com/embed/zcQ6GlBiEhE?si=w0sFrW5uowyGdB49"
                 title="PCHELICHKA demo"
                 id="pchelichka-demo"
@@ -125,7 +127,7 @@
               ></iframe>
               <!-- Replace srcdoc with src="VIDEO_EMBED_URL" when the new video is available. -->
               <iframe
-                style="--project-order: 4.5"
+                style="--project-order: 9"
                 id="pchelichka-demo-2"
                 title="PCHELICHKA 2026 Demo"
                 src="https://www.youtube.com/embed/aAfl0CDB4G0?si=5jeRMg6g2DOAMhck"
@@ -136,7 +138,7 @@
                 allowfullscreen
               ></iframe>
               <img
-                style="--project-order: 5"
+                style="--project-order: 10"
                 src="assets/images/pchelichkaconfig.png"
                 alt="Pchelichka dashboard user interface"
               />
@@ -144,9 +146,28 @@
           </div>
           <div class="project">
             <div class="project-text">
-              <h3 style="--project-order: 0">Paintball</h3>
+              <h3 style="--project-order: 0">BDR</h3>
               <p style="--project-order: 1">
-                I was contacted by a local chain of paintball arenas to create a
+                More details about BDR, including the project goals, my contributions,
+                and the design and testing process, are coming soon.
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="bdr-gallery" style="--project-order: 2" aria-label="BDR project gallery">
+                <img src="assets/images/bdr1.JPG" alt="BDR project photo 1" loading="lazy" />
+                <img src="assets/images/bdr2.JPG" alt="BDR project photo 2" loading="lazy" />
+                <div class="photo-placeholder">Photo 3 coming soon</div>
+                <div class="photo-placeholder">Photo 4 coming soon</div>
+                <div class="photo-placeholder">Photo 5 coming soon</div>
+                <div class="photo-placeholder">Photo 6 coming soon</div>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">Mravka</h3>
+              <p style="--project-order: 1">
+                I was contracted by a local chain of paintball arenas to create a
                 device for a king-of-the-hill style game. I designed and
                 fabricated a total of 5 "checkpoints".
               </p>
@@ -176,24 +197,25 @@
                 class="paintball-gallery"
                 aria-label="Paintball checkpoint gallery"
               >
-                <!-- Replace the repeated images with additional project photos when available. -->
                 <img
-                  src="assets/images/koth5.png"
+                  src="assets/images/koth5.JPG"
                   alt="Paintball game checkpoint"
                   loading="lazy"
                 />
+                <div class="paintball-designs">
+                  <img
+                    src="assets/images/mravka_schem.png"
+                    alt="Paintball checkpoint circuit schematic"
+                    loading="lazy"
+                  />
+                  <img
+                    src="assets/images/mravka_layout.png"
+                    alt="Paintball checkpoint PCB layout"
+                    loading="lazy"
+                  />
+                </div>
                 <img
-                  src="assets/images/koth.png"
-                  alt="Paintball game checkpoint (temporary repeated photo)"
-                  loading="lazy"
-                />
-                <img
-                  src="assets/images/koth2.png"
-                  alt="Paintball game checkpoint (temporary repeated photo)"
-                  loading="lazy"
-                />
-                <img
-                  src="assets/images/koth.png"
+                  src="assets/images/koth2.JPG"
                   alt="Paintball game checkpoint (temporary repeated photo)"
                   loading="lazy"
                 />
@@ -224,6 +246,34 @@
                   alt="FPV drone flight controller board" loading="lazy" />
                 <img src="assets/images/fcv2_layout.png"
                   alt="FPV drone flight controller PCB layout" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-text">
+              <h3 style="--project-order: 0">Sturshel</h3>
+              <p style="--project-order: 1">
+                Sturshel is a long-range Y-4 drone I built with a partner, featuring a fully original design. 
+                The shell was generatively designed and optimized for weight and crash resistance.
+                The carbon frame was fully designed and manufactured by us, and the flight controller is
+                our very own you can see above.
+              </p>
+              <p style="--project-order: 1">
+                We had one distinct design goal for this drone, namely to not have the propellers in frame of the camera. 
+                This was achieved by using a Y-4 configuration, which is a quadcopter with two motors on the front and two on the back,
+                even though we had started out with a traditional quadcopter design(last image).
+              </p>
+              <p style="--project-order: 1">
+                The main challenges of this project were balancing strength and weight of all components,
+                but it was particularly educational as we went through the entire design and manufacturing process.
+              </p>
+            </div>
+            <div class="project-media">
+              <div class="sturshel-gallery" style="--project-order: 2" aria-label="Sturshel project gallery">
+                <img src="assets/images/sturshel1.JPG" alt="Sturshel project photo 1" loading="lazy" />
+                <img src="assets/images/sturshel2.png" alt="Sturshel project photo 2" loading="lazy" />
+                <img src="assets/images/sturshel3.png" alt="Sturshel project photo 3" loading="lazy" />
+                <img src="assets/images/sturshel4.png" alt="Sturshel project photo 4" loading="lazy" />
               </div>
             </div>
           </div>
