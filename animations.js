@@ -123,3 +123,44 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
 } else {
   revealClasses.forEach((_, element) => reveal(element));
 }
+
+// Expand images without changing the layout of the existing galleries.
+const imageViewer = document.getElementById("image-viewer");
+if (imageViewer && typeof imageViewer.showModal === "function") {
+  const expandedImage = document.getElementById("expanded-image");
+  const caption = document.getElementById("image-viewer-caption");
+  const originalLink = document.getElementById("image-original");
+  let imageTrigger;
+  const openImage = (image) => {
+    imageTrigger = image;
+    expandedImage.src = image.currentSrc || image.src;
+    expandedImage.alt = image.alt;
+    caption.textContent = image.alt;
+    originalLink.href = expandedImage.src;
+    imageViewer.showModal();
+    document.documentElement.classList.add("image-viewer-open");
+  };
+  document.querySelectorAll("main img").forEach((image) => {
+    image.classList.add("expandable-image");
+    image.tabIndex = 0;
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-haspopup", "dialog");
+    image.setAttribute("aria-label", `Expand image: ${image.alt}`);
+    image.addEventListener("click", () => openImage(image));
+    image.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openImage(image);
+    });
+  });
+  document.getElementById("image-viewer-close").addEventListener("click", () => imageViewer.close());
+  imageViewer.addEventListener("click", (event) => {
+    if (event.target === imageViewer) imageViewer.close();
+  });
+  // Native dialog handles Escape and keeps keyboard focus within the viewer.
+  imageViewer.addEventListener("close", () => {
+    document.documentElement.classList.remove("image-viewer-open");
+    expandedImage.removeAttribute("src");
+    imageTrigger?.focus({ preventScroll: true });
+  });
+}

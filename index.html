@@ -3,7 +3,7 @@
   <head>
     <title>Kaloyan Dimitrov</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <link rel="stylesheet" href="index.css?v=20261027-sign-hit-area" />
+    <link rel="stylesheet" href="index.css?v=20261030-image-viewer" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -55,7 +55,7 @@
               <li>Developing communications and control systems</li>
               <li>
                 Working as a lab technician and undergraduate learning
-                assistant(TA)
+                assistant (TA)
               </li>
               <li>
                 <a class="resume-link" href="/Dimitrov_Kaloyan_CV.pdf" download>View résumé</a>
@@ -72,13 +72,13 @@
               <h3 style="--project-order: 0">CubeSat</h3>
               <p style="--project-order: 1">
                 I am building a CubeSat with a team of students at Yale. I am responsible for the design and implementation of the communications and control
-                systems. The mission is to demonstrate an extendable gravity gradient boom(GGB) for nadir pointing. The GGB is fully custom and developed by the team(PCB, mechanical, firmware).
+                systems. The mission is to demonstrate an extendable gravity gradient boom (GGB) for nadir pointing. The GGB is fully custom and developed by the team (PCB, mechanical, firmware).
                 I have developed the full firmware and an automated test bench for validation. This includes a full simulation environment, capable of projecting the entire mission duration both
-                with SITL(Software in the Loop) and HIL(Hardware in the Loop) testing. Power budget and mock sensor data generation are included. 
-                I have also developed the communications pipeline for the ground station to reeive telemetry and uplink commands. 
+                with SITL (software-in-the-loop) and HIL (hardware-in-the-loop) testing. Power budget and mock sensor data generation are included.
+                I have also developed the communications pipeline for the ground station to receive telemetry and uplink commands.
               </p>
               <p style="--project-order: 3">
-                The CubeSat will be deployed from the ISS in Fall of 2027 and we expect to establish first contact shortly after.
+                The CubeSat will be deployed from the ISS in fall 2027 and we expect to establish first contact shortly after.
               </p>
             </div>
             <div class="project-media">
@@ -98,7 +98,7 @@
                 the control strategy, while my partner provided the hardware.
               </p>
               <p style="--project-order: 4">
-                The first video is the first fully autonomous flight(very dear to my heart)
+                The first video is the first fully autonomous flight (very dear to my heart)
                 in my living room with no safety precautions, and a lot of trust
                 in the control system. The second video is a more recent flight with the new hardware.
                 I spent countless hours tuning the control system and optimizing the video transmission for precise operation.
@@ -106,13 +106,13 @@
               <p style="--project-order: 8">
                 The drone uses only its camera feed, received over a digital
                 wireless link, and inertial measurement unit for navigation and
-                stabilization. The drone hardware is thus affordable without any high performance chips
-                for video processing, which is offloaded to a separate processing unit(or just my laptop usually).
+                stabilization. The drone hardware is thus affordable without any high-performance chips
+                for video processing, which is offloaded to a separate processing unit (usually just my laptop).
                 The motors are controlled with a cascading PID controller from position to velocity to acceleration to pitch,
                 roll, and yaw rate commands, which are then sent to the drone
                 through the FPV radio.
                 <b
-                  >The drone is entirely autonomous form lift-off to landing.</b
+                  >The drone is entirely autonomous from lift-off to landing.</b
                 >
               </p>
               <p style="--project-order: 12">
@@ -146,7 +146,6 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <!-- Replace srcdoc with src="VIDEO_EMBED_URL" when the new video is available. -->
               <iframe
                 style="--project-order: 9"
                 id="pchelichka-demo-2"
@@ -169,17 +168,17 @@
             <div class="project-text">
               <h3 style="--project-order: 0">BDR</h3>
               <p style="--project-order: 1">
-                Bulldogs Racing(BDR) is Yale's Formula Student team, which I joined my freshman year. I quickly became the software lead and was 
-                responsible for all software on the car(and some hardware too). From late nights in the lab for hardware bring-up, to on-track problem resolution, I was involved in the full development cycle of the car or at least of its electrical and software systems.
+                Bulldogs Racing (BDR) is Yale's Formula Student team, which I joined my freshman year. I quickly became the software lead and was
+                responsible for all software on the car (and some hardware too). From late nights in the lab for hardware bring-up, to on-track problem resolution, I was involved in the full development cycle of the car or at least of its electrical and software systems.
               </p>
               <p style="--project-order: 1">
-                My first task was to design and program a PCB to monitor all 84 battery cells. Due to the high currents involved, I had to resolve multiple issues(EMI, ground charge depletion, etc.)
-                that prevented reliable measurement. Due to the stringent timelines, I had to get creative with software filters and hardware makeshift solutions, but ultiamtely the car ran at competition,
+                My first task was to design and program a PCB to monitor all 84 battery cells. Due to the high currents involved, I had to resolve multiple issues (EMI, ground charge depletion, etc.)
+                that prevented reliable measurement. Due to the stringent timelines, I had to get creative with software filters and makeshift hardware solutions, but ultimately the car ran at competition,
                 securing 6th place.
               </p>
               <p style="--project-order: 1">
-                I developed a complete telemetry system using the Mravka radios(the next project described below) that collected all car data and sent it to a dashboard for real-time monitoring.
-                This proved essential to solve a number of issues that surfaced on track days, and I was able to diagnose and fix them in real-time. 
+                I developed a complete telemetry system using the Mravka radios (the next project described below) that collected all car data and sent it to a dashboard for real-time monitoring.
+                This proved essential to solve a number of issues that surfaced on track days, and I was able to diagnose and fix them in real-time.
               </p>
             </div>
             <div class="project-media">
@@ -205,16 +204,16 @@
           </div>
           <div class="project">
             <div class="project-text">
-              <h3 style="--project-order: 0">Mravka(Ant)</h3>
+              <h3 style="--project-order: 0">Mravka (Ant)</h3>
               <p style="--project-order: 1">
                 I was contracted by a local chain of paintball arenas to create a
                 device for a king-of-the-hill style game. I designed and
                 fabricated a total of 5 "checkpoints".
               </p>
               <p style="--project-order: 3">
-                An esp32 is the "brain" of each checkpoint and controls 2
-                high-power LEDs through Darilngton transistors. A UPS battery
-                powers the entire system, and the esp32 through a step-down
+                An ESP32 is the "brain" of each checkpoint and controls 2
+                high-power LEDs through Darlington transistors. A UPS battery
+                powers the entire system, and the ESP32 through a step-down
                 converter. The checkpoints are wirelessly set up before play and
                 measure the duration that each team controls the checkpoint,
                 producing a winner at the end. They are also able to sync with
@@ -226,8 +225,8 @@
                 better power converters and much improved radio modules, namely the SX1281. The UI was also incrementally improved based on user feedback.
               </p>
               <p style="--project-order: 3">
-                Some of the challenges(and also what taught my most) were dealing with wireless communication reliability and power management
-                while keeping in sync an entire mesh network. I spent days diagnosing range issues and race conditions between the different stations.
+                Some of the challenges (and also what taught me the most) were dealing with wireless communication reliability and power management
+                while keeping an entire mesh network in sync. I spent days diagnosing range issues and race conditions between the different stations.
                 However, the most important lesson was learning how to communicate with a customer and understand their needs effectively.
               </p>
             </div>
@@ -256,7 +255,7 @@
                 </div>
                 <img
                   src="assets/images/koth2.JPG"
-                  alt="Paintball game checkpoint (temporary repeated photo)"
+                  alt="Paintball game checkpoint"
                   loading="lazy"
                 />
               </div>
@@ -268,7 +267,7 @@
               <p style="--project-order: 1">
                 A flight controller project for an FPV drone, featuring a custom
                 circuit schematic and PCB layout, developed from scratch by me and a partner.
-                Supports all major firmwares like Betaflight. Has been flight tested successfully.
+                Supports all major firmware platforms like Betaflight. Has been flight tested successfully.
               </p>
               <p style="--project-order: 1">
                 The main challenges of this project were part selection and routing. Most parts commonly used
@@ -280,10 +279,10 @@
             <div class="project-media">
               <div style="--project-order: 2" class="flight-controller-gallery"
                 aria-label="FPV drone flight controller design gallery">
-                <img class="schematic" src="assets/images/fcv2_schem.png"
-                  alt="FPV drone flight controller circuit schematic" loading="lazy" />
-                <img src="assets/images/fcv2.png"
+                <img class="featured-image" src="assets/images/fcv2.png"
                   alt="FPV drone flight controller board" loading="lazy" />
+                <img src="assets/images/fcv2_schem.png"
+                  alt="FPV drone flight controller circuit schematic" loading="lazy" />
                 <img src="assets/images/fcv2_layout.png"
                   alt="FPV drone flight controller PCB layout" loading="lazy" />
               </div>
@@ -293,18 +292,18 @@
             <div class="project-text">
               <h3 style="--project-order: 0">Sturshel</h3>
               <p style="--project-order: 1">
-                Sturshel is a long-range Y-4 drone I built with a partner, featuring a fully original design. 
+                Sturshel is a long-range Y-4 drone I built with a partner, featuring a fully original design.
                 The shell was generatively designed and optimized for weight and crash resistance.
                 The carbon frame was fully designed and manufactured by us, and the flight controller is
                 our very own you can see above.
               </p>
               <p style="--project-order: 1">
-                We had one distinct design goal for this drone, namely to not have the propellers in frame of the camera. 
+                We had one distinct design goal for this drone, namely to not have the propellers in the camera frame.
                 This was achieved by using a Y-4 configuration, which is a quadcopter with two motors on the front and two on the back,
-                even though we had started out with a traditional quadcopter design(last image).
+                even though we had started out with a traditional quadcopter design (last image).
               </p>
               <p style="--project-order: 1">
-                The main challenges of this project were balancing strength and weight of all components,
+                The main challenges of this project were balancing the strength and weight of all components,
                 but it was particularly educational as we went through the entire design and manufacturing process.
               </p>
             </div>
@@ -339,7 +338,7 @@
               <img
                 style="--project-order: 2"
                 src="assets/images/sgcsarticle.png"
-                alt="Pchelichka dashboard user interface"
+                alt="Swarm Guidance and Communication System research article"
               />
             </div>
           </div>
@@ -367,7 +366,7 @@
               </p>
               <p style="--project-order: 7">
                 Our inaugural season was an emotional rollercoaster, so I was
-                mainly performing hardware troubleshooting and scrapping
+                mainly performing hardware troubleshooting and scraping
                 together last-minute software.
               </p>
             </div>
@@ -410,7 +409,7 @@
               <p style="--project-order: 2">
                 SHARO is a robot dog I built again with a partner. I was mainly
                 responsible for the software of the robot, which was built from
-                scratch(pre-AI too). I came up with a novel way to define the
+                scratch (pre-AI too). I came up with a novel way to define the
                 motion of its limbs with Bézier curves.
               </p>
               <p style="--project-order: 4">
@@ -421,7 +420,7 @@
                 inverse kinematics calculations to Rust.
               </p>
               <p style="--project-order: 6">
-                This control panel(desktop and mobile app available) is used to
+                This control panel (desktop and mobile apps available) is used to
                 preview the camera and sensors while controlling the movement of
                 the robot.
               </p>
@@ -450,6 +449,7 @@
               <img
                 style="--project-order: 5"
                 src="assets/images/sharogui.png"
+                alt="SHARO robot control panel"
               />
             </div>
           </div>
@@ -464,10 +464,10 @@
                 satellite.
               </p>
               <p style="--project-order: 3">
-                I was the team captain and mainly focused on the electroncis and
+                I was the team captain and mainly focused on the electronics and
                 software. Along with control of the station, I also built a
                 satellite tracker with Rust that automatically started the
-                station when a satellite pass is occuring. In the end, we were
+                station when a satellite pass was occurring. In the end, we were
                 awarded for best project documentation and I was among the few
                 to successfully graduate the bootcamp.
               </p>
@@ -489,7 +489,7 @@
             <div class="project-text">
               <h3 style="--project-order: 0">LocusLibri</h3>
               <p style="--project-order: 1">
-                LocusLibri is a social media for bookworms. It lets users keep a
+                LocusLibri is a social platform for bookworms. It lets users keep a
                 reading list of books they enjoy and matches users based on
                 their reading preferences.
               </p>
@@ -502,6 +502,7 @@
               <img
                 style="--project-order: 2"
                 src="assets/images/locuslibri.png"
+                alt="LocusLibri web platform"
               />
             </div>
           </div>
@@ -509,7 +510,7 @@
             <div class="project-text">
               <h3 style="--project-order: 0">ParoleMemo</h3>
               <p style="--project-order: 1">
-                ParoleMemo is a digital dictionary-notebook to assisst learners
+                ParoleMemo is a digital dictionary-notebook to assist learners
                 with vocabulary.
               </p>
               <p style="--project-order: 3">
@@ -521,6 +522,7 @@
               <img
                 style="--project-order: 2"
                 src="assets/images/parolememo.png"
+                alt="ParoleMemo vocabulary app"
               />
             </div>
           </div>
@@ -531,8 +533,8 @@
                 I was a part of a 3-person team that participated in the NSS
                 Space Settlement Contest. We produced a 50-page proposal for a
                 space station as a future human habitat, complete with
-                engineering design, governance strucutre, and economical
-                analysis. I personally came up and documented the financial
+                engineering design, governance structure, and economic
+                analysis. I personally developed and documented the financial
                 services offered, governance hierarchy, power supply,
                 communications, transport ships, port, and storage.
               </p>
@@ -541,6 +543,7 @@
               <img
                 style="--project-order: 2"
                 src="assets/images/FortamentumCover.png"
+                alt="Fortamentum space settlement proposal cover"
               />
             </div>
           </div>
@@ -560,7 +563,7 @@
             <p>
               At Yale, I’m continuing to develop my foundation in electrical
               engineering while tackling problems, each more challenging than the last. I am
-              beyond excited to be working at the frontier of technology and look fordward to
+              beyond excited to be working at the frontier of technology and look forward to
               pushing the boundaries of what is possible.
             </p>
           </div>
@@ -589,6 +592,16 @@
       </section>
     </main>
     <footer>© 2026 Kaloyan Dimitrov</footer>
+    <dialog id="image-viewer" aria-label="Expanded image">
+      <div class="image-viewer-content">
+        <div class="image-viewer-controls">
+          <a id="image-original" target="_blank" rel="noopener">Open original image</a>
+          <button id="image-viewer-close" type="button" autofocus aria-label="Close expanded image">Close ×</button>
+        </div>
+        <img id="expanded-image" alt="" />
+        <p id="image-viewer-caption"></p>
+      </div>
+    </dialog>
+    <script src="animations.js"></script>
   </body>
-  <script src="animations.js"></script>
 </html>

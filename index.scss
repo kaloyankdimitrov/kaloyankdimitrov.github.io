@@ -647,7 +647,7 @@ html {
           font-size: clamp(0.75rem, 1.2vw, 1rem);
           text-align: center;
         }
-        .flight-controller-gallery .schematic {
+        .flight-controller-gallery .featured-image {
           grid-column: 1 / -1;
           aspect-ratio: auto;
           height: auto;
@@ -792,4 +792,67 @@ html body {
 @keyframes projects-arrow-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(0.5rem) rotate(5deg); }
+}
+
+html.image-viewer-open { overflow: hidden; }
+.expandable-image {
+  cursor: zoom-in;
+  &:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+}
+#image-viewer {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "Hack", monospace;
+  &::backdrop { background: rgba(8, 12, 18, 0.94); }
+  &[open] { display: grid; place-items: center; }
+  .image-viewer-content {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .image-viewer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    a { color: inherit; text-underline-offset: 0.2em; }
+    button {
+      flex-shrink: 0;
+      min-height: 44px;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid white;
+      border-radius: 0.25rem;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+  }
+  #expanded-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100dvh - 10rem);
+    margin: auto;
+    object-fit: contain;
+  }
+  #image-viewer-caption {
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
 }
