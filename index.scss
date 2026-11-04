@@ -605,6 +605,7 @@ html {
         }
         .paintball-gallery,
         .cubesat-gallery,
+        .limulus-gallery,
         .bdr-gallery,
         .pliq-gallery,
         .sturshel-gallery,
@@ -626,6 +627,11 @@ html {
         }
         .cubesat-gallery {
           grid-template-columns: minmax(0, 1fr);
+        }
+        .project-link-placeholder {
+          text-decoration: underline;
+          text-underline-offset: 0.2em;
+          cursor: default;
         }
         .paintball-gallery {
           grid-template-columns: minmax(0, 1fr);
@@ -718,6 +724,10 @@ html {
           .github:before {
             @extend .fa-brands;
             content: fa-content($fa-var-github);
+          }
+          .linkedin:before {
+            @extend .fa-brands;
+            content: fa-content($fa-var-linkedin);
           }
           .list-animation {
             opacity: 100;
